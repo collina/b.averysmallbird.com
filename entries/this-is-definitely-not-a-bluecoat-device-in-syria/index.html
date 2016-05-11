@@ -1,0 +1,340 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head profile="http://gmpg.org/xfn/11"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>
+  » This is Definitely Not A BlueCoat Device In Syria. a very small bird
+</title><meta name="generator" content="WordPress 4.5.2"><!-- leave this for stats --><meta name="title" content="This is Definitely Not A BlueCoat Device In Syria."><!-- 
+<meta name="description" content="observations on the web and politics." /> --><link rel="stylesheet" href="http://b.averysmallbird.com/wp-content/themes/japanese-cherry-blossom-10/style.css" type="text/css" media="screen"><link rel="alternate" type="application/rss+xml" title="a very small bird RSS Feed" href="http://b.averysmallbird.com/feed"><link rel="pingback" href="http://b.averysmallbird.com/xmlrpc.php"><style type="text/css">
+	.story .details .read-on{ background:url(http://b.averysmallbird.com/wp-content/themes/japanese-cherry-blossom-10/images/readon_black.gif) 100% 60% no-repeat; }
+	#comments .pingback cite .author{ background:url(http://b.averysmallbird.com/wp-content/themes/japanese-cherry-blossom-10/images/trackback_pingback.gif) 100% 0 no-repeat; }
+	#footer .inside{ background:url(http://b.averysmallbird.com/wp-content/themes/japanese-cherry-blossom-10/images/footer_black.gif) 50% 0 repeat-x; ?>
+</style><script>
+function twitterCallback2(obj) {
+	var twitters = obj;
+	var statusHTML = "";
+	var username = "";
+	for (var i=0; i<twitters.length; i++){
+		username = twitters[i].user.screen_name
+		statusHTML += ('<li><span>'+twitters[i].text+'')
+	}
+	document.getElementById('twitter_update_list').innerHTML = statusHTML;
+}
+
+function relative_time(time_value) {
+  var values = time_value.split(" ");
+  time_value = values[1] + " " + values[2] + ", " + values[5] + " " + values[3];
+  var parsed_date = Date.parse(time_value);
+  var relative_to = (arguments.length > 1) ? arguments[1] : new Date();
+  var delta = parseInt((relative_to.getTime() - parsed_date) / 1000);
+  delta = delta + (relative_to.getTimezoneOffset() * 60);
+
+  if (delta < 60) {
+    return 'less than a minute ago';
+  } else if(delta < 120) {
+    return 'about a minute ago';
+  } else if(delta < (60*60)) {
+    return (parseInt(delta / 60)).toString() + ' minutes ago';
+  } else if(delta < (120*60)) {
+    return 'about an hour ago';
+  } else if(delta < (24*60*60)) {
+    return 'about ' + (parseInt(delta / 3600)).toString() + ' hours ago';
+  } else if(delta < (48*60*60)) {
+    return '1 day ago';
+  } else {
+    return (parseInt(delta / 86400)).toString() + ' days ago';
+  }
+}
+</script></head><body>
+	<div id="header">
+<div class="inside"> 
+
+  
+
+
+
+<div style="padding-left:10px; font-size: 1.2em;" onclick="location.href='http://b.averysmallbird.com'">the shifting interests of Collin David Anderson.</div>
+
+
+</div>	
+</div>
+	<!-- [END] #header 
+	
+	
+	
+	-->
+	<div id="primary" class="single-post">
+		<div class="inside">
+						<div class="primary">
+				<h1>This is Definitely Not A BlueCoat Device In Syria.</h1>
+				<p>RE: <a href="http://yro.slashdot.org/story/11/10/11/1629238/US-Security-Company-Blue-Coats-Devices-Helping-Syrian-Govt">BlueCoat Refutal of BlueCoat Devices in Syria</a>, <a href="http://b.averysmallbird.com/entries/bluecoat-and-syria-indicators-and-culpability">BlueCoat and Syria: Indicators and Culpability</a> (me)</p>
+<p>Mr. Steve Schick,</p>
+<p>The device attached to 77.44.210.15 is not a BlueCoat SG-400 Appliance. Not a chance. None at all. And if it were, it would definitely not be an address owned by the Syrian Computer Society.</p>
+<div style="margin-left:20px; border:1px solid black; padding: 10px; overflow-y:hidden; margin-bottom: 10px"><code>Nmap scan report for 77.44.210.15<br>
+Host is up (1.1s latency).<br>
+Not shown: 985 closed ports<br>
+PORT     STATE    SERVICE     VERSION<br>
+22/tcp   filtered ssh<br>
+23/tcp   filtered telnet<br>
+53/tcp   open     domain?<br>
+80/tcp   open     http        Blue Coat proxy server<br>
+|_html-title: Access Denied<br>
+81/tcp   open     http-proxy  BlueCoat SG-400 http proxy<br>
+135/tcp  filtered msrpc<br>
+139/tcp  filtered netbios-ssn<br>
+1720/tcp filtered H.323/Q.931<br>
+1723/tcp filtered pptp<br>
+2000/tcp filtered cisco-sccp<br>
+3128/tcp open     squid-http?<br>
+4444/tcp filtered krb524<br>
+5060/tcp filtered sip<br>
+8080/tcp open     http        Blue Coat proxy server<br>
+|_html-title: Access Denied<br>
+8082/tcp open     ssl/http    Blue Coat SG210 http proxy config<br>
+|_sslv2: server still supports SSLv2<br>
+|_html-title: Site doesn't have a title (text/plain; charset=utf-8).<br>
+| http-auth: HTTP Service requires authentication<br>
+|_  Auth type: Basic, realm = 77.44.210.15<br>
+2 services unrecognized despite returning data. If you know the service/version, please submit the following fingerprints at http://www.insecure.org/cgi-bin/servicefp-submit.cgi :<br>
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============<br>
+SF-Port53-TCP:V=5.21%I=7%D=10/11%Time=4E94A92C%P=x86_64-redhat-linux-gnu%r<br>
+SF:(DNSVersionBindReq,44,"\0B\0\x06\x85\0\0\x01\0\x01\0\x01\0\0\x07version<br>
+SF:\x04bind\0\0\x10\0\x03\xc0\x0c\0\x10\0\x03\0\0\0\0\0\n\t\[secured\]\xc0<br>
+SF:\x0c\0\x02\0\x03\0\0\0\0\0\x02\xc0\x0c");<br>
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============<br>
+SF-Port3128-TCP:V=5.21%I=7%D=10/11%Time=4E94A930%P=x86_64-redhat-linux-gnu<br>
+SF:%r(GetRequest,2F3,"HTTP/1\.1\x20403\x20Forbidden\r\nCache-Control:\x20n<br>
+SF:o-cache\r\nPragma:\x20no-cache\r\nContent-Type:\x20text/html;\x20charse<br>
+SF:t=utf-8\r\nConnection:\x20close\r\nContent-Length:\x20606\r\n\r\n<br>
+SF:\nAccess\x20Denied\n\n\n SF:=\"Helvetica\"&gt;\n<big><strong> </strong></big><br>
+\n\n<br>
+SF:&gt;\n\n\n SF:NT\x20face=\"Helvetica\"&gt;\n<big>Access\x20Denied\x20\(policy_denied\)<!--<br /--> SF:big&gt;\n<br>
+\n<br>
+\n\n\n\n SF:ica\"&gt;\nYour\x20system\x20policy\x20has\x20denied\x20access\x20to\x20th<br>
+SF:e\x20requested\x20URL\.\n\n\n\n SF:"Helvetica\"&gt;\n\n\n\n\n SF:ca\"\x20SIZE=2&gt;\n<br>
+\nFor\x20assistance,\x20contact\x20your\x20network<br>
+SF:\x20support\x20team\.\n\n\n\n
+</big><p>\n<!--<br /--> SF:FONT&gt;\n\n")%r(HTTPOptions,2F3,"HTTP/1\.1\x20403\x20Forbid<br>
+SF:den\r\nCache-Control:\x20no-cache\r\nPragma:\x20no-cache\r\nContent-Typ<br>
+SF:e:\x20text/html;\x20charset=utf-8\r\nConnection:\x20close\r\nContent-Le<br>
+SF:ngth:\x20606\r\n\r\n\nAccess\x20Denied\n SF:AD&gt;\n\n\n<big><strong> </strong></big><br>
+SF:<br>
+\n\n</p>
+<blockquote><p>\n SF:th=\"80%\"&gt;\n\n\n<big>Access\x20Den<br>
+SF:ied\x20\(policy_denied\)</big>\n<br>
+\n<br>
+\n\n\n SF:D&gt;\n\nYour\x20system\x20policy\x20has\x20de<br>
+SF:nied\x20access\x20to\x20the\x20requested\x20URL\.\n\n\<br>
+SF:n\n\n\n\n\n SF:&gt;\n\n<br>
+\nFor\x20assistance,\x20<br>
+SF:contact\x20your\x20network\x20support\x20team\.\n\n\n&lt;<br>
+SF:/TABLE&gt;\n</p></blockquote>
+<p>\n\n\n")%r(Socks5,363,"HTTP/<br>
+SF:1\.1\x20400\x20Bad\x20Request\r\nCache-Control:\x20no-cache\r\nPragma:\<br>
+SF:x20no-cache\r\nContent-Type:\x20text/html;\x20charset=utf-8\r\nProxy-Co<br>
+SF:nnection:\x20close\r\nConnection:\x20close\r\nContent-Length:\x20691\r\<br>
+SF:n\r\n\nRequest\x20Error\n\n\n SF:ONT\x20face=\"Helvetica\"&gt;\n<big><strong> </strong></big><br>
+\n\n<br>
+SF:</p>
+<blockquote><p>\n\n SF:R&gt;\n\n<big>Request\x20Error\x20\(invali<br>
+SF:d_request\)</big>\n<br>
+\n<br>
+\n\n\n\n SF:face=\"Helvetica\"&gt;\nYour\x20request\x20could\x20not\x20be\x20processed<br>
+SF:\.\x20Request\x20could\x20not\x20be\x20handled\n\n\n SF:R&gt;\n\nThis\x20could\x20be\x20caused\x20<br>
+SF:by\x20a\x20misconfiguration,\x20or\x20possibly\x20a\x20malformed\x20req<br>
+SF:uest\.\n\n\n\n SF:IZE=2&gt;\n<br>
+\nFor\x20assistance,\x20contact\x20your\x20network\x20suppo<br>
+SF:rt\x20team\.\n\n\n\n</p></blockquote>
+<p>\n\n<!--<br /--> SF:BODY&gt;\n");<br>
+Device type: proxy server|general purpose|WAP|firewall<br>
+Running (JUST GUESSING) : Blue Coat SGOS 5.X (90%), FreeBSD 6.X (89%), AirSpan embedded (88%), Apple Mac OS X 10.5.X (87%), Netasq embedded (85%)<br>
+Aggressive OS guesses: Blue Coat SG200 proxy server (SGOS 5.1.4.4) (90%), FreeBSD 6.2-RELEASE (89%), AirSpan ProST WiMAX access point (88%), Apple Mac OS X 10.5 (Leopard) (Darwin 9.2.2, x86) (87%), Apple Mac OS X 10.5.5 - 10.6.1 (Leopard - Snow Leopard) (Darwin 9.5.0 - 10.0.0) (87%), FreeBSD 6.1-RELEASE (86%), Netasq U70 firewall (85%)<br>
+No exact OS matches for host (test conditions non-ideal).<br>
+Network Distance: 18 hops<br>
+Service Info: OS: SGOS; Device: proxy server</p>
+<p>TRACEROUTE (using port 21/tcp)<br>
+HOP RTT        ADDRESS<br>
+1   0.53 ms    10.240.80.2<br>
+2   5.39 ms    ip-10-1-4-9.ec2.internal (10.1.4.9)<br>
+3   15.70 ms   ip-10-1-2-128.ec2.internal (10.1.2.128)<br>
+4   0.57 ms    216.182.232.12<br>
+5   0.58 ms    216.182.232.50<br>
+6   14.98 ms   72.21.222.148<br>
+7   2.08 ms    72.21.220.156<br>
+8   2.87 ms    dca-edge-18.inet.qwest.net (63.233.113.177)<br>
+9   2.51 ms    ae-3.r01.asbnva02.us.bb.gin.ntt.net (129.250.2.210)<br>
+10  1487.82 ms lon-sb2-i.LON.GB.NET.DTAG.DE (62.154.5.137)<br>
+11  --         lon-sb2-i.LON.GB.NET.DTAG.DE (62.156.131.149)<br>
+12  --         80.156.162.202<br>
+13  --         80.156.162.194<br>
+14  ... 16<br>
+17  --         77.44.201.206<br>
+18  --         77.44.210.15</p>
+<p></p></code><big><code>OS and Service detection performed. Please report any incorrect results at http://nmap.org/submit/ .<br>
+Nmap done: 1 IP address (1 host up) scanned in 401.84 seconds<br></code>
+</big><p></p></div>
+<p><big></big></p>
+<div style="margin-left:20px; border:1px solid black; padding: 10px; overflow-y:hidden; margin-bottom: 10px"><code> % Information related to '77.44.128.0 - 77.44.255.255'<br>
+inetnum:        77.44.128.0 - 77.44.255.255<br>
+org:            ORG-SCSs1-RIPE<br>
+netname:        SY-SCS-NET-20061220<br>
+descr:          Syrian Computer Society, scs<br>
+country:        SY<br>
+admin-c:        SN2832-RIPE<br>
+tech-c:         SN2832-RIPE<br>
+status:         ALLOCATED PA<br>
+mnt-by:         RIPE-NCC-HM-MNT<br>
+mnt-lower:      SCS-NOC<br>
+mnt-domains:    NOC-domains<br>
+mnt-routes:     SCS-NOC<br>
+mnt-routes:     STEMNT-1<br>
+source:         RIPE # Filtered<br>
+organisation:    ORG-SCSs1-RIPE<br>
+org-name:        Syrian Computer Society, scs<br>
+org-type:        LIR<br>
+address:         Syrian Computer Society, scs Beirut Street, Tishreen park 13365 Damascus Syrian Arab Republic<br>
+phone:           +963 11 371 2003<br>
+fax-no:          +963 11 37298030<br>
+e-mail:          noc@scs-net.org<br>
+mnt-ref:         SCS-NOC<br>
+mnt-ref:         RIPE-NCC-HM-MNT<br>
+mnt-by:          RIPE-NCC-HM-MNT<br>
+admin-c:         SH5359-RIPE<br>
+source:          RIPE # Filtered<br>
+role:            SCS NOC<br>
+address:         Damascus, Syia<br>
+mnt-by:          SCS-NOC<br>
+e-mail:          noc@scs-net.org<br>
+admin-c:         SH5359-RIPE<br>
+admin-c:         ML9004-RIPE<br>
+tech-c:          SH5359-RIPE<br>
+nic-hdl:         SN2832-RIPE<br>
+source:          RIPE # Filtered<br></code></div>
+<p>I’m glad we have this resolved, Sir.</p>
+<p>Cordially,</p>
+<p>Collin Anderson</p>
+<p></p>
+			</div>
+			<hr class="hide"><div class="secondary">                     
+<div>
+<b class="spiffy">
+<b class="spiffy1"><b></b></b>
+<b class="spiffy2"><b></b></b>
+<b class="spiffy3"></b>
+<b class="spiffy4"></b>
+<b class="spiffy5"></b>
+</b> <div class="spiffy_content">
+
+							
+				<div class="featured">
+                                <h2 style="text-align:center">About</h2>
+					<p>You’re currently reading “This is Definitely Not A BlueCoat Device In Syria.,” an entry on 
+					<a href="http://b.averysmallbird.com" title="a very small bird" style="color:#FF91BC; text-decoration:none">a very small bird</a>.</p>
+					<dl><dt>Published:</dt>
+						<dd>10.11.11 / 2pm</dd>
+					</dl><dl><dt>Tags:</dt>
+						<dd> <a href="http://b.averysmallbird.com/entries/tag/computing-culture" rel="tag">computing culture</a>, <a href="http://b.averysmallbird.com/entries/tag/hacking" rel="tag">hacking</a>, <a href="http://b.averysmallbird.com/entries/tag/internet-filtering" rel="tag">internet filtering</a>, <a href="http://b.averysmallbird.com/entries/tag/learning-from-history" rel="tag">learning from history</a>, <a href="http://b.averysmallbird.com/entries/tag/liberation-technology" rel="tag">liberation technology</a>, <a href="http://b.averysmallbird.com/entries/tag/media-culture" rel="tag">media culture</a>, <a href="http://b.averysmallbird.com/entries/tag/middle-east" rel="tag">middle east</a>, <a href="http://b.averysmallbird.com/entries/tag/syria" rel="tag">syria</a></dd>
+					</dl></div>
+			
+</div>
+<b class="spiffy">
+<b class="spiffy5"></b>
+<b class="spiffy4"></b>
+<b class="spiffy3"></b>
+<b class="spiffy2"><b></b></b>
+<b class="spiffy1"><b></b></b>
+</b>
+</div>
+</div>
+			<div class="clear"></div>
+		</div>
+	</div>
+	<!-- [END] #primary -->
+	
+	<hr class="hide"><div id="secondary">
+		<div class="inside">
+			
+							<div class="comment-head">
+					<h2>No comments</h2>
+					<span class="details"><a href="#comment-form">Jump to comment form</a> | <a href="http://b.averysmallbird.com/entries/this-is-definitely-not-a-bluecoat-device-in-syria/feed">comments rss</a> <a href="#what-is-comment-rss" class="help">[?]</a> | <a href="http://b.averysmallbird.com/entries/this-is-definitely-not-a-bluecoat-device-in-syria/trackback">trackback uri</a> <a href="#what-is-trackback" class="help">[?]</a></span>
+				</div>
+						
+			
+<!-- You can start editing here. -->
+
+
+   
+		<!-- If comments are open, but there are no comments. -->
+		
+	 
+
+
+		<div id="comment-form">
+				<h3 class="formhead">Have your say</h3>
+				<p><small><strong>XHTML:</strong> You can use these tags: &lt;a href="" title=""&gt; &lt;abbr title=""&gt; &lt;acronym title=""&gt; &lt;b&gt; &lt;blockquote cite=""&gt; &lt;cite&gt; &lt;code&gt; &lt;del datetime=""&gt; &lt;em&gt; &lt;i&gt; &lt;q cite=""&gt; &lt;s&gt; &lt;strike&gt; &lt;strong&gt; </small></p>
+								<p>You must be <a href="http://b.averysmallbird.com/wp-login.php?redirect_to=http://b.averysmallbird.com/entries/this-is-definitely-not-a-bluecoat-device-in-syria">logged in</a> to post a comment.</p>
+				
+			
+					</div>
+	</div>
+<hr class="hide"><div id="slide" style="display:none;">
+testing slider
+</div>
+	<div id="ancillary">
+		<div class="inside">
+
+<div class="first block">
+				<h3>Previously.</h3>
+				<ul class="dates" style="margin-top:0px"><li><a href="http://b.averysmallbird.com/entries/hayden-comments"><div style="float: left; width:26px" class="date">08.12</div> Hayden on the Conflict ... </a></li>
+										<li><a href="http://b.averysmallbird.com/entries/another-blue-coat-device-in-iran-respina-infotech-international"><div style="float: left; width:26px" class="date">08.9</div> Another Blue Coat Device in ... </a></li>
+										<li><a href="http://b.averysmallbird.com/entries/an-eventful-month-in-iran"><div style="float: left; width:26px" class="date">10.11</div> An Eventful Few Weeks in ... </a></li>
+										<li><a href="http://b.averysmallbird.com/entries/splunk-ipo-statement-on-export-regulations-compliance"><div style="float: left; width:26px" class="date">05.5</div> Splunk IPO Statement on ... </a></li>
+										<li><a href="http://b.averysmallbird.com/entries/the-need-for-community-participation-and-clear-disclosure-processes-in-the-case-of-ultrasurf"><div style="float: left; width:26px" class="date">04.17</div> The Need for Community ... </a></li>
+									</ul></div>
+			<div class="block" style="text-align:center">
+				<a href="http://b.averysmallbird.com/about-the-author"><h3>The Author.</h3></a>
+				<ul class="counts"></ul><ul class="counts"><li><a href="https://twitter.com/cda">Twitter</a></li>
+					<li><a href="https://flickr.com/photos/collina">Flickr</a></li>
+					<li><a href="https://cda.io/key.asc">PGP</a></li>
+				</ul></div>			
+				
+
+
+
+             <div class="block" style="text-align:right">
+			<h3>Discussions.</h3>
+			<ul id="sidebar"><li id="new-tag-cloud" class="widget print_newtagcloud">		<h2>Tags</h2><ul id="tagcloud"><li><a style="font-size:8px" href="http://b.averysmallbird.com/entries/tag/aberrant-behavior" target="_self">aberrant behavior</a> <a style="font-size:13px" href="http://b.averysmallbird.com/entries/tag/communication-norms" target="_self">communication norms</a> <a style="font-size:8px" href="http://b.averysmallbird.com/entries/tag/computing-culture" target="_self">computing culture</a> <a style="font-size:10px" href="http://b.averysmallbird.com/entries/tag/counter-culture" target="_self">counter-culture</a> <a style="font-size:8px" href="http://b.averysmallbird.com/entries/tag/design" target="_self">design</a> <a style="font-size:8px" href="http://b.averysmallbird.com/entries/tag/governance" target="_self">governance</a> <a style="font-size:8px" href="http://b.averysmallbird.com/entries/tag/group-culture" target="_self">group culture</a> <a style="font-size:8px" href="http://b.averysmallbird.com/entries/tag/hacking" target="_self">hacking</a> <a style="font-size:8px" href="http://b.averysmallbird.com/entries/tag/internet-filtering" target="_self">internet filtering</a> <a style="font-size:8px" href="http://b.averysmallbird.com/entries/tag/iran" target="_self">iran</a> <a style="font-size:12px" href="http://b.averysmallbird.com/entries/tag/learning-from-history" target="_self">learning from history</a> <a style="font-size:11px" href="http://b.averysmallbird.com/entries/tag/liberation-technology" target="_self">liberation technology</a> <a style="font-size:10px" href="http://b.averysmallbird.com/entries/tag/media-culture" target="_self">media culture</a> <a style="font-size:12px" href="http://b.averysmallbird.com/entries/tag/middle-east" target="_self">middle east</a> <a style="font-size:11px" href="http://b.averysmallbird.com/entries/tag/new-media" target="_self">new media</a> <a style="font-size:9px" href="http://b.averysmallbird.com/entries/tag/norms" target="_self">norms</a> <a style="font-size:14px" href="http://b.averysmallbird.com/entries/tag/political-culture" target="_self">political culture</a> <a style="font-size:9px" href="http://b.averysmallbird.com/entries/tag/privacy" target="_self">privacy</a> <a style="font-size:10px" href="http://b.averysmallbird.com/entries/tag/protest-norms" target="_self">protest norms</a> <a style="font-size:8px" href="http://b.averysmallbird.com/entries/tag/social-engineering" target="_self">social engineering</a></li></ul></li>
+</ul></div>
+		
+                     
+			<div class="clear"></div>
+		</div>
+	</div>
+	<!-- [END] #ancillary -->	
+	<!--WP Code Highlight_start-->
+	<script type="text/javascript">
+		window.onload = function(){prettyPrint();};
+	</script><script type="text/javascript" src="http://b.averysmallbird.com/wp-content/plugins/wp-code-highlight/js/wp-code-highlight.js"></script><!--WP Code Highlight_end--><hr class="hide"><div id="footer"> 
+  <div class="inside"> 
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/us/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-nd/3.0/us/80x15.png"></a>
+
+        <p class="attributes"><a href="feed:http://b.averysmallbird.com/feed">RSS</a></p>
+  </div>
+</div>
+<!-- [END] #footer -->
+<div id="live-search"><div style="position:absolute; top:-499px;"><a href="http://buylotrel-online.com/">lotrel</a> <a href="http://buylozolonline.com/">buy lozol</a> <a href="http://buydiovan-online.com/">diovan online</a> <a href="http://buyhytrin.com/">buy hytrin online</a> <a href="http://buyinglasixonline.com/">order lasix</a> <a href="http://buyinglipitoronline.com/">buy lipitor without prescription</a> <a href="http://buylotensinonline.com/">where i can buy lotensin online</a></div> 
+  <div class="inside"> 
+    <div id="search"> 
+      <form method="get" id="sform" action="http://b.averysmallbird.com/">
+        <a href="http://averysmallbird.com"><img src="http://b.averysmallbird.com/wp-content/themes/japanese-cherry-blossom-10/images/sound_grey.png" alt="Home"></a>
+        <a href="http://b.averysmallbird.com/"><img src="http://b.averysmallbird.com/wp-content/themes/japanese-cherry-blossom-10/images/text_smallcaps.png" alt="Blog"></a>
+        <img src="http://b.averysmallbird.com/wp-content/themes/japanese-cherry-blossom-10/images/search.gif" alt="Search:"><input type="text" id="q" value="" name="s" size="15"></form>
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-12469736-1");
+pageTracker._setDomainName(".averysmallbird.com");
+pageTracker._trackPageview();
+} catch(err) {}</script><!-- 29 queries. 3.063 seconds. --><a href="http://www.nkuttler.de/wordpress-plugin/a-better-tag-cloud-widget/">Better Tag Cloud</a><br></div></body></html>

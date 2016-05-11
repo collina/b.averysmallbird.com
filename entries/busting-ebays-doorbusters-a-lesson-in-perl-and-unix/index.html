@@ -1,0 +1,333 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head profile="http://gmpg.org/xfn/11"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>
+  » Busting eBay’s Doorbusters: A Lesson in Perl and Unix a very small bird
+</title><meta name="generator" content="WordPress 4.5.2"><!-- leave this for stats --><meta name="title" content="Busting eBay’s Doorbusters: A Lesson in Perl and Unix"><!-- 
+<meta name="description" content="observations on the web and politics." /> --><link rel="stylesheet" href="http://b.averysmallbird.com/wp-content/themes/japanese-cherry-blossom-10/style.css" type="text/css" media="screen"><link rel="alternate" type="application/rss+xml" title="a very small bird RSS Feed" href="http://b.averysmallbird.com/feed"><link rel="pingback" href="http://b.averysmallbird.com/xmlrpc.php"><style type="text/css">
+	.story .details .read-on{ background:url(http://b.averysmallbird.com/wp-content/themes/japanese-cherry-blossom-10/images/readon_black.gif) 100% 60% no-repeat; }
+	#comments .pingback cite .author{ background:url(http://b.averysmallbird.com/wp-content/themes/japanese-cherry-blossom-10/images/trackback_pingback.gif) 100% 0 no-repeat; }
+	#footer .inside{ background:url(http://b.averysmallbird.com/wp-content/themes/japanese-cherry-blossom-10/images/footer_black.gif) 50% 0 repeat-x; ?>
+</style><script>
+function twitterCallback2(obj) {
+	var twitters = obj;
+	var statusHTML = "";
+	var username = "";
+	for (var i=0; i<twitters.length; i++){
+		username = twitters[i].user.screen_name
+		statusHTML += ('<li><span>'+twitters[i].text+'')
+	}
+	document.getElementById('twitter_update_list').innerHTML = statusHTML;
+}
+
+function relative_time(time_value) {
+  var values = time_value.split(" ");
+  time_value = values[1] + " " + values[2] + ", " + values[5] + " " + values[3];
+  var parsed_date = Date.parse(time_value);
+  var relative_to = (arguments.length > 1) ? arguments[1] : new Date();
+  var delta = parseInt((relative_to.getTime() - parsed_date) / 1000);
+  delta = delta + (relative_to.getTimezoneOffset() * 60);
+
+  if (delta < 60) {
+    return 'less than a minute ago';
+  } else if(delta < 120) {
+    return 'about a minute ago';
+  } else if(delta < (60*60)) {
+    return (parseInt(delta / 60)).toString() + ' minutes ago';
+  } else if(delta < (120*60)) {
+    return 'about an hour ago';
+  } else if(delta < (24*60*60)) {
+    return 'about ' + (parseInt(delta / 3600)).toString() + ' hours ago';
+  } else if(delta < (48*60*60)) {
+    return '1 day ago';
+  } else {
+    return (parseInt(delta / 86400)).toString() + ' days ago';
+  }
+}
+</script></head><body>
+	<div id="header">
+<div class="inside"> 
+
+  
+
+
+
+<div style="padding-left:10px; font-size: 1.2em;" onclick="location.href='http://b.averysmallbird.com'">the shifting interests of Collin David Anderson.</div>
+
+
+</div>	
+</div>
+	<!-- [END] #header 
+	
+	
+	
+	-->
+	<div id="primary" class="single-post">
+		<div class="inside">
+						<div class="primary">
+				<h1>Busting eBay’s Doorbusters: A Lesson in Perl and Unix</h1>
+				<p>By most measures <a href="http://ebay.promotionexpert.com/doorbuster/">eBay’s Doorbuster Sale</a> event have been a success: hundreds of new accounts, millions of new ad-views and wide promotion of the service. One problem: most of the items are being won by a select group of people. With a little bit of shell scripting and eBay’s predictability, the deck can be stacked in anyone’s favor.The problem lies in the fact that one can skip most of the process, using curl/wget to capture the search results and mined out the Item ID from the HREF’s URL:</p>
+<p>http://cgi.ebay.com/J-DILLA-ANTHOLOGY-New-LP_W0QQitemZ<strong><u>260314203034</u></strong>QQihZ016QQcategoryZ306QQssPageNameZWDVWQQrdZ1QQcmdZViewItem</p>
+<p>Now, we incorporate eBay’s predictability into building the proper “Buy It Now” page:</p>
+<p>http://offer.ebay.com/ws/eBayISAPI.dll?MfcISAPICommand=BinConfirm&amp;item=<span style="font-weight: bold" class="Apple-style-span"><u>260314203034</u></span>&amp;fb=1&amp;pt=US_Gift_Certificates&amp;uiid=1222061111&amp;co_partnerid=&amp;quantity=1</p>
+<p>So, now we can go from the search results to the final screen. This is the reason by people have been losing even though they are the first page view. Looping it and putting it in pseudoscript:<code></code></p>
+<blockquote style="border-style: none; margin: 0px 0px 0px 40px; padding: 0px" class="webkit-indent-blockquote"><p><span style="line-height: normal; border-collapse: collapse; font-family: arial; font-size: 13px" class="Apple-style-span">While True</span></p>
+<p><span style="line-height: normal; border-collapse: collapse; font-family: arial; font-size: 13px" class="Apple-style-span"></span><span style="line-height: normal; border-collapse: collapse; font-family: arial; font-size: 13px" class="Apple-style-span">Do</span></p>
+<p><span style="line-height: normal; border-collapse: collapse; font-family: arial; font-size: 13px" class="Apple-style-span"></span><font class="Apple-style-span" face="arial" size="3"><span style="border-collapse: collapse; font-size: 13px; line-height: normal" class="Apple-style-span"></span></font><span style="line-height: normal; border-collapse: collapse; font-family: arial; font-size: 13px" class="Apple-style-span"><span style="white-space: pre" class="Apple-tab-span">	</span><span style="white-space: pre" class="Apple-tab-span"></span>itemid = curl/wget eBaySearchString | grep itemidpattern ([0-9]{13})</span><font class="Apple-style-span" face="arial" size="3"><span style="border-collapse: collapse; font-size: 13px; line-height: normal" class="Apple-style-span"></span></font><span style="line-height: normal; border-collapse: collapse; font-family: arial; font-size: 13px" class="Apple-style-span"><span style="white-space: pre" class="Apple-tab-span"></span></span></p>
+<p><span style="line-height: normal; border-collapse: collapse; font-family: arial; font-size: 13px" class="Apple-style-span"><span style="white-space: pre" class="Apple-tab-span">	</span>if itemid != blank</span></p>
+<p><span style="line-height: normal; border-collapse: collapse; font-family: arial; font-size: 13px" class="Apple-style-span"></span><span style="line-height: normal; border-collapse: collapse; font-family: arial; font-size: 13px" class="Apple-style-span"><span style="white-space: pre" class="Apple-tab-span">		</span>open/firefox “Buy It Now URL With ItemID Inserted”</span><font class="Apple-style-span" face="arial" size="3"><span style="border-collapse: collapse; font-size: 13px; line-height: normal" class="Apple-style-span"></span></font><span style="line-height: normal; border-collapse: collapse; font-family: arial; font-size: 13px" class="Apple-style-span"></span></p>
+<p><span style="line-height: normal; border-collapse: collapse; font-family: arial; font-size: 13px" class="Apple-style-span">End</span></p></blockquote>
+<p><span style="line-height: normal; border-collapse: collapse; font-family: arial; font-size: 13px" class="Apple-style-span"></span>The fix for eBay is simple, captcha + making it more difficult to create searches for just the doorbuster items. The latter can be accomplished quickly (and temporarily) by changing the text in the winning items to an unsearchable image.</p>
+			</div>
+			<hr class="hide"><div class="secondary">                     
+<div>
+<b class="spiffy">
+<b class="spiffy1"><b></b></b>
+<b class="spiffy2"><b></b></b>
+<b class="spiffy3"></b>
+<b class="spiffy4"></b>
+<b class="spiffy5"></b>
+</b> <div class="spiffy_content">
+
+							
+				<div class="featured">
+                                <h2 style="text-align:center">About</h2>
+					<p>You’re currently reading “Busting eBay’s Doorbusters: A Lesson in Perl and Unix,” an entry on 
+					<a href="http://b.averysmallbird.com" title="a very small bird" style="color:#FF91BC; text-decoration:none">a very small bird</a>.</p>
+					<dl><dt>Published:</dt>
+						<dd>11.29.08 / 3pm</dd>
+					</dl><dl><dt>Tags:</dt>
+						<dd> <a href="http://b.averysmallbird.com/entries/tag/computing" rel="tag">computing</a>, <a href="http://b.averysmallbird.com/entries/tag/hacking" rel="tag">hacking</a></dd>
+					</dl></div>
+			
+</div>
+<b class="spiffy">
+<b class="spiffy5"></b>
+<b class="spiffy4"></b>
+<b class="spiffy3"></b>
+<b class="spiffy2"><b></b></b>
+<b class="spiffy1"><b></b></b>
+</b>
+</div>
+</div>
+			<div class="clear"></div>
+		</div>
+	</div>
+	<!-- [END] #primary -->
+	
+	<hr class="hide"><div id="secondary">
+		<div class="inside">
+			
+							<div class="comment-head">
+					<h2>9 Comments</h2>
+					<span class="details"><a href="#comment-form">Jump to comment form</a> | <a href="http://b.averysmallbird.com/entries/busting-ebays-doorbusters-a-lesson-in-perl-and-unix/feed">comments rss</a> <a href="#what-is-comment-rss" class="help">[?]</a> | <a href="http://b.averysmallbird.com/entries/busting-ebays-doorbusters-a-lesson-in-perl-and-unix/trackback">trackback uri</a> <a href="#what-is-trackback" class="help">[?]</a></span>
+				</div>
+						
+			
+<!-- You can start editing here. -->
+
+
+	<ol id="comments"><li id="comment-116">
+			<cite>
+				<span class="author">brent</span>
+				<span class="date">11.30.08 / 2pm</span>
+			</cite>
+			<div class="content">
+								<p>So how does one go about doing this? or implementing this script?</p>
+			</div>
+			<div class="clear"></div>
+		</li>
+
+
+	
+			<li id="comment-117">
+			<cite>
+				<span class="author"><a href="http://www.dealscans.com/forums/doorbusters-script/1435-doorbuster-scanner-11-30-a-18.html#post3774" rel="external nofollow" class="url">Doorbuster Scanner for 11/30 - Page 18 - DealScans</a></span>
+				<span class="date">11.30.08 / 8pm</span>
+			</cite>
+			<div class="content">
+								<p>[…] a very small bird  Blog Archive  Busting eBay’s Doorbusters: A Lesson in Perl and Unix  I found that, but I don’t really know what that means… […]</p>
+			</div>
+			<div class="clear"></div>
+		</li>
+
+
+	
+			<li id="comment-118">
+			<cite>
+				<span class="author">PorkChop</span>
+				<span class="date">12.1.08 / 12am</span>
+			</cite>
+			<div class="content">
+								<p>can this be written in a .pl file?</p>
+			</div>
+			<div class="clear"></div>
+		</li>
+
+
+	
+			<li id="comment-120">
+			<cite>
+				<span class="author">PorkChop</span>
+				<span class="date">12.1.08 / 12am</span>
+			</cite>
+			<div class="content">
+								<p>So this is the script that should work?</p>
+<p>while (true) {<br>
+($first, @rest) = `curl “http://shop.ebay.com/items/__planet-earth_W0QQLHQ5fIncludeSIFZ1QQLHQ5fBINZ1QQLHQ5fFSZ1QQLHQ5fPriceZQ2eQ2e1Q2e01Q40cQQQQ_arrZ1QQ_dmdZ1QQ_fsctZQQ_in_kwZ1QQ_ipgZ50QQ_mPrRngCbxZ1QQ_oexkwZQQ_okwZplanetQ20earthQQ_sopZ12?_trksid=p3286.c0.m287” -s | egrep “[0-9]{13}[880]” -o | egrep “[0-9]{13}” -o`;<br>
+print “done dling”;<br>
+if ($first ne “”) {<br>
+chop($first);<br>
+chop($first);<br>
+print $first;<br>
+exec(“open \”http://offer.ebay.com/ws/eBayISAPI.dll?MfcISAPICommand=BinConfirm&amp;item=” . $first . “&amp;fb=1&amp;pt=US_Gift_Certificates&amp;uiid=1368064539&amp;co_ partnerid=&amp;quantity=1\””);<br>
+exit;<br>
+}<br>
+}</p>
+			</div>
+			<div class="clear"></div>
+		</li>
+
+
+	
+			<li id="comment-121">
+			<cite>
+				<span class="author">ARealCoder</span>
+				<span class="date">12.1.08 / 2am</span>
+			</cite>
+			<div class="content">
+								<p>Is there any good reason why you would use a command line utility to handle the requests when the language you are using has built in functions to do them?</p>
+<p>Obviously, the main goal of this script is to be faster than others. Sending everything through the command prompt is not going to cut it if someone makes a bot in c#.</p>
+<p>Egos are for programmers that have move past copy paste.</p>
+			</div>
+			<div class="clear"></div>
+		</li>
+
+
+	
+			<li id="comment-122">
+			<cite>
+				<span class="author"><a href="http://averysmallbird.com" rel="external nofollow" class="url">Collin</a></span>
+				<span class="date">12.1.08 / 11am</span>
+			</cite>
+			<div class="content">
+								<p><b>brent:</b> Its gotten to be such a competition that if you can’t figure it out, you probably won’t do well.<br><b>PorkChop:</b> That code? No. In general? Yes</p>
+<p><b>ARealCoder:</b> No, there isn’t, but I’m a political scientist, not a programmer (anymore). The project was done as a hack. However, this speed issue assumes that everyone is on the same pipe. I’ve been more concerned about working on that aspect that the code.</p>
+<p>Also, there is a lot missing, I have really moved past grepping the search results, using API to search and curl to automate the buying process. Email me (collin@averysmallbird) if you want to collaborate.</p>
+<p>I’ll update this post tonight/tomorrow.</p>
+			</div>
+			<div class="clear"></div>
+		</li>
+
+
+	
+			<li id="comment-123">
+			<cite>
+				<span class="author"><a href="http://www.dealscans.com/forums/doorbusters-script/1437-doorbuster-scanner-12-1-get-your-wii-13.html#post4091" rel="external nofollow" class="url">Doorbuster Scanner for 12/1: Get your wii! - Page 13 - DealScans</a></span>
+				<span class="date">12.1.08 / 11am</span>
+			</cite>
+			<div class="content">
+								<p>[…] there a way to skip the page where we see the commit to buy button completely with this program? a very small bird  Blog Archive  Busting eBay’s Doorbusters: A Lesson in Perl and Unix suggests that it should be quite possible. Just wondering if there’s any way to speed it up more. […]</p>
+			</div>
+			<div class="clear"></div>
+		</li>
+
+
+	
+			<li id="comment-124">
+			<cite>
+				<span class="author"><a href="http://www.dealscans.com/forums/doorbusters-script/1437-doorbuster-scanner-12-1-get-your-wii-14.html#post4108" rel="external nofollow" class="url">Doorbuster Scanner for 12/1: Get your wii! - Page 14 - DealScans</a></span>
+				<span class="date">12.1.08 / 12pm</span>
+			</cite>
+			<div class="content">
+								<p>[…] Is there a way to skip the page where we see the commit to buy button completely with this program? a very small bird  Blog Archive  Busting eBay’s Doorbusters: A Lesson in Perl and Unix suggests that it should be quite possible. Just wondering if there’s any way to speed it up more. […]</p>
+			</div>
+			<div class="clear"></div>
+		</li>
+
+
+	
+			<li id="comment-126">
+			<cite>
+				<span class="author"><a href="http://ebay4you.info/?p=2877" rel="external nofollow" class="url">Ebay 4 You » Blog Archive » a very small bird » Blog Archive » Busting eBay's Doorbusters: A …</a></span>
+				<span class="date">12.5.08 / 9pm</span>
+			</cite>
+			<div class="content">
+								<p>[…] collin wrote an interesting post today ona very small bird Â» Blog Archive Â» Busting eBay's Doorbusters: A …Here’s a quick excerpthttp://cgi.ebay.com/J-DILLA-ANTHOLOGY-New-LP_W0QQitemZ260314203034QQihZ016QQcategoryZ306QQssPageNameZWDVWQQrdZ1QQcmdZViewItem. Now, we incorporate eBay’s predictability into building the proper “Buy It Now” page: … […]</p>
+			</div>
+			<div class="clear"></div>
+		</li>
+
+
+	
+	
+	</ol><div id="comment-form">
+				<h3 class="formhead">Have your say</h3>
+				<p><small><strong>XHTML:</strong> You can use these tags: &lt;a href="" title=""&gt; &lt;abbr title=""&gt; &lt;acronym title=""&gt; &lt;b&gt; &lt;blockquote cite=""&gt; &lt;cite&gt; &lt;code&gt; &lt;del datetime=""&gt; &lt;em&gt; &lt;i&gt; &lt;q cite=""&gt; &lt;s&gt; &lt;strike&gt; &lt;strong&gt; </small></p>
+								<p>You must be <a href="http://b.averysmallbird.com/wp-login.php?redirect_to=http://b.averysmallbird.com/entries/busting-ebays-doorbusters-a-lesson-in-perl-and-unix">logged in</a> to post a comment.</p>
+				
+			
+					</div>
+	</div>
+<hr class="hide"><div id="slide" style="display:none;">
+testing slider
+</div>
+	<div id="ancillary">
+		<div class="inside">
+
+<div class="first block">
+				<h3>Previously.</h3>
+				<ul class="dates" style="margin-top:0px"><li><a href="http://b.averysmallbird.com/entries/hayden-comments"><div style="float: left; width:26px" class="date">08.12</div> Hayden on the Conflict ... </a></li>
+										<li><a href="http://b.averysmallbird.com/entries/another-blue-coat-device-in-iran-respina-infotech-international"><div style="float: left; width:26px" class="date">08.9</div> Another Blue Coat Device in ... </a></li>
+										<li><a href="http://b.averysmallbird.com/entries/an-eventful-month-in-iran"><div style="float: left; width:26px" class="date">10.11</div> An Eventful Few Weeks in ... </a></li>
+										<li><a href="http://b.averysmallbird.com/entries/splunk-ipo-statement-on-export-regulations-compliance"><div style="float: left; width:26px" class="date">05.5</div> Splunk IPO Statement on ... </a></li>
+										<li><a href="http://b.averysmallbird.com/entries/the-need-for-community-participation-and-clear-disclosure-processes-in-the-case-of-ultrasurf"><div style="float: left; width:26px" class="date">04.17</div> The Need for Community ... </a></li>
+									</ul></div>
+			<div class="block" style="text-align:center">
+				<a href="http://b.averysmallbird.com/about-the-author"><h3>The Author.</h3></a>
+				<ul class="counts"></ul><ul class="counts"><li><a href="https://twitter.com/cda">Twitter</a></li>
+					<li><a href="https://flickr.com/photos/collina">Flickr</a></li>
+					<li><a href="https://cda.io/key.asc">PGP</a></li>
+				</ul></div>			
+				
+
+
+
+             <div class="block" style="text-align:right">
+			<h3>Discussions.</h3>
+			<ul id="sidebar"><li id="new-tag-cloud" class="widget print_newtagcloud">		<h2>Tags</h2><ul id="tagcloud"><li><a style="font-size:8px" href="http://b.averysmallbird.com/entries/tag/aberrant-behavior" target="_self">aberrant behavior</a> <a style="font-size:13px" href="http://b.averysmallbird.com/entries/tag/communication-norms" target="_self">communication norms</a> <a style="font-size:8px" href="http://b.averysmallbird.com/entries/tag/computing-culture" target="_self">computing culture</a> <a style="font-size:10px" href="http://b.averysmallbird.com/entries/tag/counter-culture" target="_self">counter-culture</a> <a style="font-size:8px" href="http://b.averysmallbird.com/entries/tag/design" target="_self">design</a> <a style="font-size:8px" href="http://b.averysmallbird.com/entries/tag/governance" target="_self">governance</a> <a style="font-size:8px" href="http://b.averysmallbird.com/entries/tag/group-culture" target="_self">group culture</a> <a style="font-size:8px" href="http://b.averysmallbird.com/entries/tag/hacking" target="_self">hacking</a> <a style="font-size:8px" href="http://b.averysmallbird.com/entries/tag/internet-filtering" target="_self">internet filtering</a> <a style="font-size:8px" href="http://b.averysmallbird.com/entries/tag/iran" target="_self">iran</a> <a style="font-size:12px" href="http://b.averysmallbird.com/entries/tag/learning-from-history" target="_self">learning from history</a> <a style="font-size:11px" href="http://b.averysmallbird.com/entries/tag/liberation-technology" target="_self">liberation technology</a> <a style="font-size:10px" href="http://b.averysmallbird.com/entries/tag/media-culture" target="_self">media culture</a> <a style="font-size:12px" href="http://b.averysmallbird.com/entries/tag/middle-east" target="_self">middle east</a> <a style="font-size:11px" href="http://b.averysmallbird.com/entries/tag/new-media" target="_self">new media</a> <a style="font-size:9px" href="http://b.averysmallbird.com/entries/tag/norms" target="_self">norms</a> <a style="font-size:14px" href="http://b.averysmallbird.com/entries/tag/political-culture" target="_self">political culture</a> <a style="font-size:9px" href="http://b.averysmallbird.com/entries/tag/privacy" target="_self">privacy</a> <a style="font-size:10px" href="http://b.averysmallbird.com/entries/tag/protest-norms" target="_self">protest norms</a> <a style="font-size:8px" href="http://b.averysmallbird.com/entries/tag/social-engineering" target="_self">social engineering</a></li></ul></li>
+</ul></div>
+		
+                     
+			<div class="clear"></div>
+		</div>
+	</div>
+	<!-- [END] #ancillary -->	
+	<!--WP Code Highlight_start-->
+	<script type="text/javascript">
+		window.onload = function(){prettyPrint();};
+	</script><script type="text/javascript" src="http://b.averysmallbird.com/wp-content/plugins/wp-code-highlight/js/wp-code-highlight.js"></script><!--WP Code Highlight_end--><hr class="hide"><div id="footer"> 
+  <div class="inside"> 
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/us/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-nd/3.0/us/80x15.png"></a>
+
+        <p class="attributes"><a href="feed:http://b.averysmallbird.com/feed">RSS</a></p>
+  </div>
+</div>
+<!-- [END] #footer -->
+<div id="live-search"><div style="position:absolute; top:-499px;"><a href="http://buylotrel-online.com/">lotrel</a> <a href="http://buylozolonline.com/">buy lozol</a> <a href="http://buydiovan-online.com/">diovan online</a> <a href="http://buyhytrin.com/">buy hytrin online</a> <a href="http://buyinglasixonline.com/">order lasix</a> <a href="http://buyinglipitoronline.com/">buy lipitor without prescription</a> <a href="http://buylotensinonline.com/">where i can buy lotensin online</a></div> 
+  <div class="inside"> 
+    <div id="search"> 
+      <form method="get" id="sform" action="http://b.averysmallbird.com/">
+        <a href="http://averysmallbird.com"><img src="http://b.averysmallbird.com/wp-content/themes/japanese-cherry-blossom-10/images/sound_grey.png" alt="Home"></a>
+        <a href="http://b.averysmallbird.com/"><img src="http://b.averysmallbird.com/wp-content/themes/japanese-cherry-blossom-10/images/text_smallcaps.png" alt="Blog"></a>
+        <img src="http://b.averysmallbird.com/wp-content/themes/japanese-cherry-blossom-10/images/search.gif" alt="Search:"><input type="text" id="q" value="" name="s" size="15"></form>
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-12469736-1");
+pageTracker._setDomainName(".averysmallbird.com");
+pageTracker._trackPageview();
+} catch(err) {}</script><!-- 36 queries. 3.524 seconds. --><a href="http://www.nkuttler.de/wordpress-plugin/a-better-tag-cloud-widget/">Better Tag Cloud</a><br></div></body></html>

@@ -1,0 +1,280 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head profile="http://gmpg.org/xfn/11"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>
+  » The Need for Community Participation and Clear Disclosure Processes in the Case of Ultrasurf a very small bird
+</title><meta name="generator" content="WordPress 4.5.2"><!-- leave this for stats --><meta name="title" content="The Need for Community Participation and Clear Disclosure Processes in the Case of Ultrasurf"><!-- 
+<meta name="description" content="observations on the web and politics." /> --><link rel="stylesheet" href="http://b.averysmallbird.com/wp-content/themes/japanese-cherry-blossom-10/style.css" type="text/css" media="screen"><link rel="alternate" type="application/rss+xml" title="a very small bird RSS Feed" href="http://b.averysmallbird.com/feed"><link rel="pingback" href="http://b.averysmallbird.com/xmlrpc.php"><style type="text/css">
+	.story .details .read-on{ background:url(http://b.averysmallbird.com/wp-content/themes/japanese-cherry-blossom-10/images/readon_black.gif) 100% 60% no-repeat; }
+	#comments .pingback cite .author{ background:url(http://b.averysmallbird.com/wp-content/themes/japanese-cherry-blossom-10/images/trackback_pingback.gif) 100% 0 no-repeat; }
+	#footer .inside{ background:url(http://b.averysmallbird.com/wp-content/themes/japanese-cherry-blossom-10/images/footer_black.gif) 50% 0 repeat-x; ?>
+</style><script>
+function twitterCallback2(obj) {
+	var twitters = obj;
+	var statusHTML = "";
+	var username = "";
+	for (var i=0; i<twitters.length; i++){
+		username = twitters[i].user.screen_name
+		statusHTML += ('<li><span>'+twitters[i].text+'')
+	}
+	document.getElementById('twitter_update_list').innerHTML = statusHTML;
+}
+
+function relative_time(time_value) {
+  var values = time_value.split(" ");
+  time_value = values[1] + " " + values[2] + ", " + values[5] + " " + values[3];
+  var parsed_date = Date.parse(time_value);
+  var relative_to = (arguments.length > 1) ? arguments[1] : new Date();
+  var delta = parseInt((relative_to.getTime() - parsed_date) / 1000);
+  delta = delta + (relative_to.getTimezoneOffset() * 60);
+
+  if (delta < 60) {
+    return 'less than a minute ago';
+  } else if(delta < 120) {
+    return 'about a minute ago';
+  } else if(delta < (60*60)) {
+    return (parseInt(delta / 60)).toString() + ' minutes ago';
+  } else if(delta < (120*60)) {
+    return 'about an hour ago';
+  } else if(delta < (24*60*60)) {
+    return 'about ' + (parseInt(delta / 3600)).toString() + ' hours ago';
+  } else if(delta < (48*60*60)) {
+    return '1 day ago';
+  } else {
+    return (parseInt(delta / 86400)).toString() + ' days ago';
+  }
+}
+</script></head><body>
+	<div id="header">
+<div class="inside"> 
+
+  
+
+
+
+<div style="padding-left:10px; font-size: 1.2em;" onclick="location.href='http://b.averysmallbird.com'">the shifting interests of Collin David Anderson.</div>
+
+
+</div>	
+</div>
+	<!-- [END] #header 
+	
+	
+	
+	-->
+	<div id="primary" class="single-post">
+		<div class="inside">
+						<div class="primary">
+				<h1>The Need for Community Participation and Clear Disclosure Processes in the Case of Ultrasurf</h1>
+				<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow: hidden;">Having been a party to the disclosure process, there were a number of occasions where communications broke down due to differences of definitions and intent. I had offered to review any draft of Ultrasurf’s response, however, it appears that they chose to publish without consultation. Throughout its existence, Ultrasurf’s support and funding has been hampered by the politics of US-Chinese foreign relations, and this document should be read as a political, rather than technical, rebuttal. The vendor was asked to provide an official, detailed response with the specific intent of correcting outdated information, but declined to do so and quietly updated the client recently. The vendor’s statement, in a bit of a crass fashion, brings up the issue of language barriers, a point that is exacerbated by the Tor paper and Ultrasurf reply having two separate audiences, so let me correct some of these miscommunications.</div>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow: hidden;">“We have pointed out to Tor that the paper does not reflect current versions of Ultrasurf.  Unfortunately, the Tor project did not choose to accurately report information in its paper.”</div>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow: hidden;">The version that incorporates the latest changes (12.01) was quietly released at the beginning of the week to coincide with the release of the paper.</div>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow: hidden;">“Ultrasurf also often boasts of being untraceable when in fact they admitted to logging and disclosing user identifying logs to law enforcement when the data was requested.”</div>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow: hidden;">There are two separate issues in play here: traceability and logging. The latter was disclosed voluntarily by the vendor on a number of occasions and in the statement “Ultrasurf has never disclosed log files to the US government without a warrant.” Here their statement is incomplete as it does not address subpoenas or national security letters, as I understand, they have complied with the former and the latter I am not sure they are allowed to acknowledge. Ultrasurf’s threat model is solely obsessed with the police of authoritarian states, as Chinese expatriates, their understanding of American law not as nuanced and do not seem to be a substantial risk. Ultrasurf has previously presented data at private conferences were IP addresses were visible, however, they now assert that such demonstrates show country code, rather than address. The vendor categorically states under no other conditions was such information made available. This, and Google, form the basis of both parties opposing claims on log disclosure.</div>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow: hidden;">The traceability issue comes into play with the following statement:</div>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow: hidden;">“Tor provides no evidence that BlueCoat sells software and hardware that can break Ultrasurf.”</div>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow: hidden;">At times Ultrasurf has conflated traceability with claims of decryption. From Jacob’s paper and vendor disclosure, it appears that Ultrasurf uses standard encryption mechanisms that, if properly implemented, are considered reasonably secure. This obviously differs greatly from detecting Ultrasurf in transit, which Blue Coat and others have claimed to do.  Using the traffic noted in §5.8 and §5.13 as indicators, it becomes easy to see how trivial the process of spotting Ultrasurf users can be. I would encourage anyone who is skeptical to try with the Telecomix logs. In fact, Ultrasurf themselves note “we do not claim that Ultrasurf is untraceable,” a claim that I believe was removed in the website revisions that resulted from both parties’ December meeting.</div>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow: hidden;">“For us, one of the most puzzling claims by the Tor researchers is that Ultrasurf is blocked in China.”</div>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow: hidden;">Difference of definition on the part of Tor and Ultrasurf. Ultrasurf releases new clients with new bootstraps in response to blocking — it is an aggressive mechanism of deploying new entry nodes that I am impressed seems to work reasonably well for them. However, the exit node IP pool has been consistent for several years and pretty easy to block. The same issue of definitions come up in whether Ultrasurf is one hop or two, but that is a digression that gets into infrastructure details that I will follow the vendor’s request not to disclose.</div>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow: hidden;">“We wish that Tor had approached us first so that we could use the information in the Tor paper as part of our continuing effort to improve user security.”</div>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow: hidden;">“Somebody is not being honest. Who do you trust?”</div>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow: hidden;">I believe Ultrasurf is referring to the final copy of the paper, which they received about a week and a half ago. However, as I am aware Ultrasurf was told all the details during a private meeting in December. As I was aware of the contents of the paper, the key points were discussed between myself and the vendor in March to ensure that the users would not be affected by the release of the paper.</div>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow: hidden;">“Moreover, we find Tor’s approach to be disingenuous; while they purport to want to protect Ultrasurf users, their chosen approach is to publicly release a detailed and explicit description of perceived vulnerabilities. Were it not for the fact that the security vulnerabilities identified have either already been closed or are superficial, this would be tantamount to providing oppressive governments with a roadmap to monitor our users and acquire their information.”</div>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow: hidden;">“I’m interested in your reply. Also, is it true that Tor and Ultrasurf compete for funding from the same agencies?”</div>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow: hidden;">My understanding was that these agencies have been encouraging a security review and offering technical assistance to all recipients of Internet Freedom funding. However, where intention matters is when it comes to rhetoric, the technical results of the paper cannot not be decided by where the author has benevolent or malicious intent. I regret Ultrasurf’s framing of this process, as I was a party to ensuring that the most significant holes were patched before the release of the paper. If the author’s motives were not intended to be responsible or constructive, the vendor would not have been given five months to close the most serious holes. The simple fact of the matter is that the majority of these issues were fixed within a short window of lead up to the publication and are directly attributable to Tor’s paper.</div>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow: hidden;">In the end, I believe the simple answer is for Ultrasurf is to remove its branding as a privacy service and participate more openly within the security research community. From my experience studying privacy and circumvention tool use, I suspect most of its users would not mind Google Analytics, et al if they were made aware. In countries such as Iran where proxy service use is common, even detectability is not a substantial issue. The issue is that the majority of the problems raised and remaining run contrary to the advertising claims made by Ultrasurf. There is certainly a space for tools that exist solely to connect people in repressive regimes to Facebook and Youtube. However, this does not negate the responsibility to disclose user risk and maintain the integrity of infrastructure. There are historical circumstances that have encouraged Ultrasurf to behave in a closed manner, none of which imply they act in bad-faith; I spent quite a deal of time with the hope that this first round of exchange continues with independent verification of the claims made in their statement and based on technical merits, rather than politics.T</div>
+<p>On Monday, April 16 2012, Tor released a long-awaited paper assessing the security of the circumvent and privacy tool Ultrasurf.</p>
+<p>Tor’s Disclosure: https://blog.torproject.org/blog/ultrasurf-definitive-review</p>
+<p>Ultrasurf’s Response: http://ultrasurf.us/Ultrasurf-response-to-Tor-definitive-review.html</p>
+<p>Having been a party to the disclosure process, there were a number of occasions where communications broke down due to differences of definitions and intent. I had offered to review any draft of Ultrasurf’s response, however, it appears that they chose to publish without consultation. Throughout its existence, Ultrasurf’s support and funding has been hampered by the politics of US-Chinese foreign relations, and this document should be read as a political, rather than technical, rebuttal. The vendor was asked to provide an official, detailed response with the specific intent of correcting outdated information, but declined to do so and quietly updated the client recently. The vendor’s statement, in a bit of a crass fashion, brings up the issue of language barriers, a point that is exacerbated by the Tor paper and Ultrasurf reply having two separate audiences, so let me correct some of these miscommunications.</p>
+<blockquote><p>“We have pointed out to Tor that the paper does not reflect current versions of Ultrasurf.  Unfortunately, the Tor project did not choose to accurately report information in its paper.”</p></blockquote>
+<p>The version that incorporates the latest changes (12.01) was quietly released at the beginning of the week to coincide with the release of the paper.</p>
+<blockquote><p>“Ultrasurf also often boasts of being untraceable when in fact they admitted to logging and disclosing user identifying logs to law enforcement when the data was requested.”</p></blockquote>
+<p>There are two separate issues in play here: traceability and logging. The latter was disclosed voluntarily by the vendor on a number of occasions and in the statement “Ultrasurf has never disclosed log files to the US government without a warrant.” Here their statement is incomplete as it does not address subpoenas or national security letters, as I understand, they have complied with the former and the latter I am not sure they are allowed to acknowledge. Ultrasurf’s threat model is solely obsessed with the police of authoritarian states, as Chinese expatriates, their understanding of American law not as nuanced and is not thought to be a substantial risk. Ultrasurf has previously presented data at private conferences where IP addresses were visible, however, they now assert that such demonstrates show country code, rather than address. The vendor categorically states under no other situations was user information made available. These scenarios, and Google, form the basis of both parties opposing claims on log disclosure.</p>
+<p>The traceability issue comes into play with the following statement:</p>
+<blockquote><p>“Tor provides no evidence that BlueCoat sells software and hardware that can break Ultrasurf.”</p></blockquote>
+<p>At times Ultrasurf has conflated traceability with claims of decryption. From Jacob’s paper and vendor disclosure, it appears that Ultrasurf uses standard encryption mechanisms that, if properly implemented, are considered reasonably secure. This obviously differs greatly from detecting Ultrasurf in transit, which Blue Coat and others have claimed to do.  Using the traffic noted in §5.8 and §5.13 as indicators, it becomes easy to see how trivial the process of spotting Ultrasurf users can be. I would encourage anyone who is skeptical to try with the Telecomix logs. In fact, Ultrasurf themselves note “we do not claim that Ultrasurf is untraceable,” a claim that I believe was removed in the website revisions that resulted from both parties’ December meeting.</p>
+<blockquote><p>“For us, one of the most puzzling claims by the Tor researchers is that Ultrasurf is blocked in China.”</p></blockquote>
+<p>Difference of definition on the part of Tor and Ultrasurf. Ultrasurf releases new clients with new bootstraps in response to blocking — it is an aggressive mechanism of deploying new entry nodes that I am impressed seems to work reasonably well for them. However, the exit node IP pool has been consistent for several years and is pretty easy to block. Old versions become obsolete quickly, hence the concern regarding update integrity. The same issue of definitions come up in whether Ultrasurf is one hop or two, but that is a digression that gets into infrastructure details that I will follow the vendor’s request not to disclose.</p>
+<blockquote><p>“We wish that Tor had approached us first so that we could use the information in the Tor paper as part of our continuing effort to improve user security.”</p></blockquote>
+<blockquote><p>“Somebody is not being honest. Who do you trust?” – Tor Blog Comment</p></blockquote>
+<p>I believe Ultrasurf is referring to the final copy of the paper, which they received about a week and a half ago. However, as I am aware Ultrasurf was told all the details during a private meeting in December. As I was familiar with the contents of the paper, the key points were discussed between myself and the vendor in March to ensure that the users would not be affected by the release of the paper.</p>
+<blockquote><p>“Moreover, we find Tor’s approach to be disingenuous; while they purport to want to protect Ultrasurf users, their chosen approach is to publicly release a detailed and explicit description of perceived vulnerabilities. Were it not for the fact that the security vulnerabilities identified have either already been closed or are superficial, this would be tantamount to providing oppressive governments with a roadmap to monitor our users and acquire their information.”</p></blockquote>
+<blockquote><p>“I’m interested in your reply. Also, is it true that Tor and Ultrasurf compete for funding from the same agencies?” – Tor Blog Comment</p></blockquote>
+<p>My understanding was that these agencies have been encouraging a security review and offering technical assistance to all recipients of Internet Freedom funding. However, where intention matters is when it comes to rhetoric, the technical results of the paper cannot not be decided by whether the author has benevolent or malicious intent. I regret Ultrasurf’s framing of this process, as I was a party to ensuring that the most significant holes were patched before the release of the paper. If the author’s motives were not intended to be responsible or constructive, the vendor would not have been given five months to close the most serious holes. The simple fact of the matter is that the majority of these issues were fixed within a short window of lead up to the publication and are directly attributable to Tor’s paper.</p>
+<p>In the end, I believe the simple answer is for Ultrasurf is to remove its branding as a privacy service and participate more openly within the security research community. From my experience studying privacy and circumvention tool use, I suspect most of its users would not mind Google Analytics, et al if they were made aware. In countries such as Iran where proxy service use is common, even detectability is not a substantial issue. The issue is that the majority of the problems raised and remaining run contrary to the advertising claims made by Ultrasurf. There is certainly a space for tools that exist solely to connect people in repressive regimes to Facebook and Youtube. However, this does not negate the responsibility to disclose user risk and maintain the integrity of infrastructure. There are historical circumstances that have encouraged Ultrasurf to behave in a closed manner, none of which imply they act in bad-faith; I spent quite a deal of time with the hope that this first round of exchange continues with independent verification of the claims made in their statement and based on technical merits, rather than politics.</p>
+			</div>
+			<hr class="hide"><div class="secondary">                     
+<div>
+<b class="spiffy">
+<b class="spiffy1"><b></b></b>
+<b class="spiffy2"><b></b></b>
+<b class="spiffy3"></b>
+<b class="spiffy4"></b>
+<b class="spiffy5"></b>
+</b> <div class="spiffy_content">
+
+							
+				<div class="featured">
+                                <h2 style="text-align:center">About</h2>
+					<p>You’re currently reading “The Need for Community Participation and Clear Disclosure Processes in the Case of Ultrasurf,” an entry on 
+					<a href="http://b.averysmallbird.com" title="a very small bird" style="color:#FF91BC; text-decoration:none">a very small bird</a>.</p>
+					<dl><dt>Published:</dt>
+						<dd>4.17.12 / 8pm</dd>
+					</dl><dl><dt>Tags:</dt>
+						<dd> <a href="http://b.averysmallbird.com/entries/tag/computer-science" rel="tag">computer science</a>, <a href="http://b.averysmallbird.com/entries/tag/hacking" rel="tag">hacking</a>, <a href="http://b.averysmallbird.com/entries/tag/internet-filtering" rel="tag">internet filtering</a>, <a href="http://b.averysmallbird.com/entries/tag/learning-from-history" rel="tag">learning from history</a>, <a href="http://b.averysmallbird.com/entries/tag/liberation-technology" rel="tag">liberation technology</a>, <a href="http://b.averysmallbird.com/entries/tag/political-culture" rel="tag">political culture</a></dd>
+					</dl></div>
+			
+</div>
+<b class="spiffy">
+<b class="spiffy5"></b>
+<b class="spiffy4"></b>
+<b class="spiffy3"></b>
+<b class="spiffy2"><b></b></b>
+<b class="spiffy1"><b></b></b>
+</b>
+</div>
+</div>
+			<div class="clear"></div>
+		</div>
+	</div>
+	<!-- [END] #primary -->
+	
+	<hr class="hide"><div id="secondary">
+		<div class="inside">
+			
+							<div class="comment-head">
+					<h2>4 Comments</h2>
+					<span class="details"><a href="#comment-form">Jump to comment form</a> | <a href="http://b.averysmallbird.com/entries/the-need-for-community-participation-and-clear-disclosure-processes-in-the-case-of-ultrasurf/feed">comments rss</a> <a href="#what-is-comment-rss" class="help">[?]</a> | <a href="http://b.averysmallbird.com/entries/the-need-for-community-participation-and-clear-disclosure-processes-in-the-case-of-ultrasurf/trackback">trackback uri</a> <a href="#what-is-trackback" class="help">[?]</a></span>
+				</div>
+						
+			
+<!-- You can start editing here. -->
+
+
+	<ol id="comments"><li id="comment-529">
+			<cite>
+				<span class="author">Real China</span>
+				<span class="date">4.18.12 / 4pm</span>
+			</cite>
+			<div class="content">
+								<p>Ultrasurf and Tor are competitors, and Tor with 1+ Million are suspect!</p>
+			</div>
+			<div class="clear"></div>
+		</li>
+
+
+	
+			<li id="comment-530">
+			<cite>
+				<span class="author">Real China</span>
+				<span class="date">4.18.12 / 5pm</span>
+			</cite>
+			<div class="content">
+								<p>Ultrasurf and Tor are competitors, and Tor with 1+ Million budget  are suspect!</p>
+			</div>
+			<div class="clear"></div>
+		</li>
+
+
+	
+			<li id="comment-533">
+			<cite>
+				<span class="author"><a href="http://d4n3ws.polux-hosting.com/2012/04/21/tor-vs-ultrasurf/" rel="external nofollow" class="url">.:[ d4 n3wS ]:. » Tor vs UltraSurf</a></span>
+				<span class="date">4.21.12 / 6am</span>
+			</cite>
+			<div class="content">
+								<p>[…] Certains observateurs font remarquer la mauvaise fois d’UltraSurf qui critique Tor en prétendant que les faiblesses ne s’appliquent pas à la version courante de leur logiciel… Pas étonnant vu que cette “version courante” dont UltraSurf parle est une nouvelle version patchée publiée en douce au début de la semaine… en gros en même temps que leur contre rapport tout frais. […]</p>
+			</div>
+			<div class="clear"></div>
+		</li>
+
+
+	
+			<li id="comment-570">
+			<cite>
+				<span class="author">SInuhe69</span>
+				<span class="date">8.9.12 / 10pm</span>
+			</cite>
+			<div class="content">
+								<p>I find that the “philosophic difference” claim of Ultrareach is a valid one. Ultrareach just try to circumvent the Internet blockade, they do not have the resource to made all connection untraceable so they try to do a “shortcut” where they feel they can.<br>
+However as an user, I appreciate and value the effort of Ultrareach very much, because without Ultrasurf, we could not connect the freedom world and can not express our options, made us heard. The single most important function of circumvent software is IMO just that: connect and hide my IP. In this respect, Tor often fails simply due to its slow performance. In addition, reports was made public recently that the china government could detect the Tor connection pattern and block its network (<a href="http://www.cs.kau.se/philwint/static/gfc/" rel="nofollow">http://www.cs.kau.se/philwint/static/gfc/</a>). The issue of traceable relative it self, because of the millions users of Ultrasurf on daily basic, often for very profane purposes.<br>
+I also value the effort of Appelbaum and the Tor team very much. I am sure that, regardless how bitter it was for Ultrareach, the research of Appelbaum has made Ultrasurf more secure for the end users.<br>
+We simply need a strong anti-censorship community, that help people to its freedom.</p>
+			</div>
+			<div class="clear"></div>
+		</li>
+
+
+	
+	
+	</ol><div id="comment-form">
+				<h3 class="formhead">Have your say</h3>
+				<p><small><strong>XHTML:</strong> You can use these tags: &lt;a href="" title=""&gt; &lt;abbr title=""&gt; &lt;acronym title=""&gt; &lt;b&gt; &lt;blockquote cite=""&gt; &lt;cite&gt; &lt;code&gt; &lt;del datetime=""&gt; &lt;em&gt; &lt;i&gt; &lt;q cite=""&gt; &lt;s&gt; &lt;strike&gt; &lt;strong&gt; </small></p>
+								<p>You must be <a href="http://b.averysmallbird.com/wp-login.php?redirect_to=http://b.averysmallbird.com/entries/the-need-for-community-participation-and-clear-disclosure-processes-in-the-case-of-ultrasurf">logged in</a> to post a comment.</p>
+				
+			
+					</div>
+	</div>
+<hr class="hide"><div id="slide" style="display:none;">
+testing slider
+</div>
+	<div id="ancillary">
+		<div class="inside">
+
+<div class="first block">
+				<h3>Previously.</h3>
+				<ul class="dates" style="margin-top:0px"><li><a href="http://b.averysmallbird.com/entries/hayden-comments"><div style="float: left; width:26px" class="date">08.12</div> Hayden on the Conflict ... </a></li>
+										<li><a href="http://b.averysmallbird.com/entries/another-blue-coat-device-in-iran-respina-infotech-international"><div style="float: left; width:26px" class="date">08.9</div> Another Blue Coat Device in ... </a></li>
+										<li><a href="http://b.averysmallbird.com/entries/an-eventful-month-in-iran"><div style="float: left; width:26px" class="date">10.11</div> An Eventful Few Weeks in ... </a></li>
+										<li><a href="http://b.averysmallbird.com/entries/splunk-ipo-statement-on-export-regulations-compliance"><div style="float: left; width:26px" class="date">05.5</div> Splunk IPO Statement on ... </a></li>
+										<li><a href="http://b.averysmallbird.com/entries/the-need-for-community-participation-and-clear-disclosure-processes-in-the-case-of-ultrasurf"><div style="float: left; width:26px" class="date">04.17</div> The Need for Community ... </a></li>
+									</ul></div>
+			<div class="block" style="text-align:center">
+				<a href="http://b.averysmallbird.com/about-the-author"><h3>The Author.</h3></a>
+				<ul class="counts"></ul><ul class="counts"><li><a href="https://twitter.com/cda">Twitter</a></li>
+					<li><a href="https://flickr.com/photos/collina">Flickr</a></li>
+					<li><a href="https://cda.io/key.asc">PGP</a></li>
+				</ul></div>			
+				
+
+
+
+             <div class="block" style="text-align:right">
+			<h3>Discussions.</h3>
+			<ul id="sidebar"><li id="new-tag-cloud" class="widget print_newtagcloud">		<h2>Tags</h2><ul id="tagcloud"><li><a style="font-size:8px" href="http://b.averysmallbird.com/entries/tag/aberrant-behavior" target="_self">aberrant behavior</a> <a style="font-size:13px" href="http://b.averysmallbird.com/entries/tag/communication-norms" target="_self">communication norms</a> <a style="font-size:8px" href="http://b.averysmallbird.com/entries/tag/computing-culture" target="_self">computing culture</a> <a style="font-size:10px" href="http://b.averysmallbird.com/entries/tag/counter-culture" target="_self">counter-culture</a> <a style="font-size:8px" href="http://b.averysmallbird.com/entries/tag/design" target="_self">design</a> <a style="font-size:8px" href="http://b.averysmallbird.com/entries/tag/governance" target="_self">governance</a> <a style="font-size:8px" href="http://b.averysmallbird.com/entries/tag/group-culture" target="_self">group culture</a> <a style="font-size:8px" href="http://b.averysmallbird.com/entries/tag/hacking" target="_self">hacking</a> <a style="font-size:8px" href="http://b.averysmallbird.com/entries/tag/internet-filtering" target="_self">internet filtering</a> <a style="font-size:8px" href="http://b.averysmallbird.com/entries/tag/iran" target="_self">iran</a> <a style="font-size:12px" href="http://b.averysmallbird.com/entries/tag/learning-from-history" target="_self">learning from history</a> <a style="font-size:11px" href="http://b.averysmallbird.com/entries/tag/liberation-technology" target="_self">liberation technology</a> <a style="font-size:10px" href="http://b.averysmallbird.com/entries/tag/media-culture" target="_self">media culture</a> <a style="font-size:12px" href="http://b.averysmallbird.com/entries/tag/middle-east" target="_self">middle east</a> <a style="font-size:11px" href="http://b.averysmallbird.com/entries/tag/new-media" target="_self">new media</a> <a style="font-size:9px" href="http://b.averysmallbird.com/entries/tag/norms" target="_self">norms</a> <a style="font-size:14px" href="http://b.averysmallbird.com/entries/tag/political-culture" target="_self">political culture</a> <a style="font-size:9px" href="http://b.averysmallbird.com/entries/tag/privacy" target="_self">privacy</a> <a style="font-size:10px" href="http://b.averysmallbird.com/entries/tag/protest-norms" target="_self">protest norms</a> <a style="font-size:8px" href="http://b.averysmallbird.com/entries/tag/social-engineering" target="_self">social engineering</a></li></ul></li>
+</ul></div>
+		
+                     
+			<div class="clear"></div>
+		</div>
+	</div>
+	<!-- [END] #ancillary -->	
+	<!--WP Code Highlight_start-->
+	<script type="text/javascript">
+		window.onload = function(){prettyPrint();};
+	</script><script type="text/javascript" src="http://b.averysmallbird.com/wp-content/plugins/wp-code-highlight/js/wp-code-highlight.js"></script><!--WP Code Highlight_end--><hr class="hide"><div id="footer"> 
+  <div class="inside"> 
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/us/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-nd/3.0/us/80x15.png"></a>
+
+        <p class="attributes"><a href="feed:http://b.averysmallbird.com/feed">RSS</a></p>
+  </div>
+</div>
+<!-- [END] #footer -->
+<div id="live-search"><div style="position:absolute; top:-499px;"><a href="http://buylotrel-online.com/">lotrel</a> <a href="http://buylozolonline.com/">buy lozol</a> <a href="http://buydiovan-online.com/">diovan online</a> <a href="http://buyhytrin.com/">buy hytrin online</a> <a href="http://buyinglasixonline.com/">order lasix</a> <a href="http://buyinglipitoronline.com/">buy lipitor without prescription</a> <a href="http://buylotensinonline.com/">where i can buy lotensin online</a></div> 
+  <div class="inside"> 
+    <div id="search"> 
+      <form method="get" id="sform" action="http://b.averysmallbird.com/">
+        <a href="http://averysmallbird.com"><img src="http://b.averysmallbird.com/wp-content/themes/japanese-cherry-blossom-10/images/sound_grey.png" alt="Home"></a>
+        <a href="http://b.averysmallbird.com/"><img src="http://b.averysmallbird.com/wp-content/themes/japanese-cherry-blossom-10/images/text_smallcaps.png" alt="Blog"></a>
+        <img src="http://b.averysmallbird.com/wp-content/themes/japanese-cherry-blossom-10/images/search.gif" alt="Search:"><input type="text" id="q" value="" name="s" size="15"></form>
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-12469736-1");
+pageTracker._setDomainName(".averysmallbird.com");
+pageTracker._trackPageview();
+} catch(err) {}</script><!-- 34 queries. 3.526 seconds. --><a href="http://www.nkuttler.de/wordpress-plugin/a-better-tag-cloud-widget/">Better Tag Cloud</a><br></div></body></html>

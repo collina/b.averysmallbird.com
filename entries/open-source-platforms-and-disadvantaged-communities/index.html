@@ -1,0 +1,295 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head profile="http://gmpg.org/xfn/11"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>
+  » Open Source Platforms and Disadvantaged Communities. a very small bird
+</title><meta name="generator" content="WordPress 4.5.2"><!-- leave this for stats --><meta name="title" content="Open Source Platforms and Disadvantaged Communities."><!-- 
+<meta name="description" content="observations on the web and politics." /> --><link rel="stylesheet" href="http://b.averysmallbird.com/wp-content/themes/japanese-cherry-blossom-10/style.css" type="text/css" media="screen"><link rel="alternate" type="application/rss+xml" title="a very small bird RSS Feed" href="http://b.averysmallbird.com/feed"><link rel="pingback" href="http://b.averysmallbird.com/xmlrpc.php"><style type="text/css">
+	.story .details .read-on{ background:url(http://b.averysmallbird.com/wp-content/themes/japanese-cherry-blossom-10/images/readon_black.gif) 100% 60% no-repeat; }
+	#comments .pingback cite .author{ background:url(http://b.averysmallbird.com/wp-content/themes/japanese-cherry-blossom-10/images/trackback_pingback.gif) 100% 0 no-repeat; }
+	#footer .inside{ background:url(http://b.averysmallbird.com/wp-content/themes/japanese-cherry-blossom-10/images/footer_black.gif) 50% 0 repeat-x; ?>
+</style><script>
+function twitterCallback2(obj) {
+	var twitters = obj;
+	var statusHTML = "";
+	var username = "";
+	for (var i=0; i<twitters.length; i++){
+		username = twitters[i].user.screen_name
+		statusHTML += ('<li><span>'+twitters[i].text+'')
+	}
+	document.getElementById('twitter_update_list').innerHTML = statusHTML;
+}
+
+function relative_time(time_value) {
+  var values = time_value.split(" ");
+  time_value = values[1] + " " + values[2] + ", " + values[5] + " " + values[3];
+  var parsed_date = Date.parse(time_value);
+  var relative_to = (arguments.length > 1) ? arguments[1] : new Date();
+  var delta = parseInt((relative_to.getTime() - parsed_date) / 1000);
+  delta = delta + (relative_to.getTimezoneOffset() * 60);
+
+  if (delta < 60) {
+    return 'less than a minute ago';
+  } else if(delta < 120) {
+    return 'about a minute ago';
+  } else if(delta < (60*60)) {
+    return (parseInt(delta / 60)).toString() + ' minutes ago';
+  } else if(delta < (120*60)) {
+    return 'about an hour ago';
+  } else if(delta < (24*60*60)) {
+    return 'about ' + (parseInt(delta / 3600)).toString() + ' hours ago';
+  } else if(delta < (48*60*60)) {
+    return '1 day ago';
+  } else {
+    return (parseInt(delta / 86400)).toString() + ' days ago';
+  }
+}
+</script></head><body>
+	<div id="header">
+<div class="inside"> 
+
+  
+
+
+
+<div style="padding-left:10px; font-size: 1.2em;" onclick="location.href='http://b.averysmallbird.com'">the shifting interests of Collin David Anderson.</div>
+
+
+</div>	
+</div>
+	<!-- [END] #header 
+	
+	
+	
+	-->
+	<div id="primary" class="single-post">
+		<div class="inside">
+						<div class="primary">
+				<h1>Open Source Platforms and Disadvantaged Communities.</h1>
+				<style type="text/css"> div.p { margin-top: 7pt;}</style><style type="text/css"><!--
+ td div.comp { margin-top: -0.6ex; margin-bottom: -1ex;}
+ td div.comb { margin-top: -0.6ex; margin-bottom: -.6ex;}
+ td div.hrcomp { line-height: 0.9; margin-top: -0.8ex; margin-bottom: -1ex;}
+ td div.norm {line-height:normal;}
+ span.roman {font-family: serif; font-style: normal; font-weight: normal;} 
+ span.overacc2 {position: relative;  left: .8em; top: -1.2ex;}
+ #paper h3{color:black}
+ #paper h2{color:black}
+ #paper h1{color:black}
+
+ span.overacc1 {position: relative;  left: .6em; top: -1.2ex;} --></style><div id="paper">
+<p>The following paper will be presented before the ACM’s “Growing the HFOSS Community, Humanitarian Free and Open Source Software (HFOSS) Symposium” on March 10th in Wisconsin. It is provided under the terms of CC: BY SA NC, copyright Collin Anderson. I welcome any comment on the theme of the position and invite people to attend the conference.</p>
+<div style="text-align:center"><a href="http://b.averysmallbird.com/wp-content/uploads/2010/01/HFOSS_Symp-paper48.pdf">Download PDF</a></div>
+<p></p>
+<hr><h1 align="center">
+Open Source Platforms and Disadvantaged Communities. </h1>
+<div class="p"><!----></div>
+<h3 align="center">Collin Anderson </h3>
+<div class="p"><!----></div>
+<h3 align="center">30 November 2009 </h3>
+<div class="p"><!----></div>
+<h2> Abstract</h2>
+<p>During the Winter of 2007, the University of North Dakota Kiwi Project was established as an effort to put free computers into disadvantaged households with an open source platform and engage students on social issues pertaining to their profession. Two years later, the effort has introduced hundreds of individuals to free software and improved access to the technological revolution that is too often denied to low income households. Despite statistical successes, there remains a lingering feeling that the environment chosen has inhibited the project’s potential. While the adoption of Linux in such projects is financial and legally free, implementation has encountered numerous hidden burdens and social impediments which have greatly changed our original equation. </p>
+<div class="p"><!----></div>
+<p>In its current state, the wide-scale adoption of Linux would reverse a decade’s worth of standardization and needlessly increase the learning curve of computer education for vulnerable populations. In light of this, instead of solely heralding triumphs, it is necessary at such ventures to address the points of weakness endemic in the open source model and how they pertain to computer science education. </p>
+<div class="p"><!----></div>
+<div class="p"><!----></div>
+<h2><a name="tth_sEc1"><br>
+1</a>  Being Different</h2>
+<div class="p"><!----></div>
+<p>It’s important to concede the obvious; Linux will always have the significant flaw of being “not-Windows.” Any weaknesses in the community and its model are only one part of the explanation of why Linux has not reached a critical mass of users in the general populations. Even if Microsoft were to immediately quit every semblance of anti-competitive behavior, its platform would dominate the landscape for at least another decade. Most large enterprises are too heavily invested, in terms of education as well as money, in such platforms to justify massive upheaval. Furthermore, it is necessary to recognize that Microsoft products and concepts dominate the popular lexicon of computing. To most, Microsoft Word is the entire concept of word processing and will remain to be for some time. Similar popular, monogamous relationships exist between concept and implementation for many Redmond products, especially Excel and Powerpoint.  While there have been substantive victories in forcing governments to adopt open standards and open software, experience in specific proprietary programs is still necessary for employment beyond manual labor.</p>
+<div class="p"><!----></div>
+<p>Defining a principle of transparency as proximity to the current design and usage norms (today, Microsoft norms), then a decrease in familiarity is an increase in end-user burden. In practice this means: if the Kiwi Project introduces “not-Office,” then at some point the concept of file types, fonts and conversion will come up. This is a decrease in transparency, which means more to learn and more anxiety. In being “not-Windows,” concerned developers should therefore understand that every step away from Windows norms increases the stress of converting to a different platform. People are remarkably adept at finding subtle changes in what they are use to. Deviation from Microsoft interface fundamentals, such as toolbar placement and function names, should be balanced against the real possibility of scaring away less intrepid users. With this in mind, open-source advocates should explore development issues as an additional, alternative cause for free software’s shortcomings as well as a significant constraint to the aspirations of the effort.</p>
+<div class="p"><!----></div>
+<p>Firefox, the open source movement’s star pupil, is likely an exception that proves the point. It seems probable that the advertising campaign to label Firefox as the `safest way to explore the Internet’ has been more responsible for its success than external application features. To its credit Firefox handles complex and wide-ranging types of media, yet its most important aspect is that it is a convenient, unimposing shell for content. In spite of this level of transparency, Microsoft branding has maintained Internet Explorer’s position as the default browser, with many developers creating pages specifically for its poor implementation of web standards.</p>
+<div class="p"><!----></div>
+<p>Considering the demands of the current workforce, to promote anything other than popular and uniform norms is a gamble with the wrong group of people. Often, open-source advocates fall back on precept that individuals should learn general concepts instead of the placement of pertinent buttons. While admirable, this approach is much more instructionally intensive, a luxury for those trying to learn job skills quickly. Computer education runs contrary to the common analogy of learning to drive a car<a href="#tthFtNtAAB" name="tthFrefAAB"><sup>1</sup></a> in that software applications are orders of magnitude more complex and ambiguous in interface than any automobile. People have had a hundred years to move past fear and awe of a car, as opposed to one or two generations with computers.</p>
+<div class="p"><!----></div>
+<p>Standardization is not simply a product of openness and compatibility. Whereas, Microsoft presents a uniform platform of the Windows Desktop, Office and Internet Explorer and Apple offers OS X, iWork and Safari, Linux is expressed through a multifaceted combination of application which are often completely distinct in appearance, name, configuration and functionality from each other. Firefox’s shortcomings in adoption, despite its enlightened development, highlight the problem of bundling and uniformity in distribution that is endemic exclusively to F/OSS. Unlike its proprietary competitors, Linux has yet to, and is unlikely to ever, settle on a singular user interface, much less a browser. </p>
+<div class="p"><!----></div>
+<h2><a name="tth_sEc2"><br>
+2</a>  Being Ideological</h2>
+<div class="p"><!----></div>
+<p>More visibly, the issue of developer hubris and ideological entrenchment has been a reoccurring impediment to delivering a polished product to end-users.  The open source community has embraced the notion that software development is meritocratic. In reality, this has created self-serving libertarian tendencies and provincialism. The open source model breeds both a selective commitment to those features that are pioneering or popular, as well as a misaligned expectation of self-sufficiency. By acting in this way such developers have already disenfranchised users who are more concerned with learning basic productivity skills than compilers, codecs, toolkits and versioning systems. There is a frightening scarcity of developers with the perspective to alter this alienating direction. For this reason, open source’s most popular contributions are in areas far divorced from users. Developers too often create products with a target audience outside a set of highly-proficient users and fail to appreciate differing needs. When it comes to something like an implementation of <i>dhcpd</i>, this is perfectly fine. However, when direct user interaction increases, the importance of accessibility becomes clear as described before.</p>
+<div class="p"><!----></div>
+<p>A brief survey of help forums and feature-request tickets yields a plethora of quotes from developers that are deeply unsettling. During the final stages testing KDE 4’s deployment, the Kiwi Project noticed that the basic feature of playing an audio CD had disappeared. The most immediate answer available, located in a forum, was at the time “we developers don’t find this an important feature.”<a href="#tthFtNtAAC" name="tthFrefAAC"><sup>2</sup></a> Apparently, in the course of the software being rewritten, a consensus was made by the developers of one of the most popular Linux audio players that `everyone just rips CDs right away anyway.’ In fact, between half a dozen audio players, whose differences seemed defined by which GUI toolkit was used to copy iTunes, in the end none of these players was complete or satisfying; none played audio CDs.<a href="#tthFtNtAAD" name="tthFrefAAD"><sup>3</sup></a></p>
+<div class="p"><!----></div>
+<p>The open-source model’s mantra of free development is rightfully heralded by its proponents as the modern vision of massive collaboration, however its invidious anti-authority tendencies are rarely mentioned. When developers aren’t constrained by hierarchy, the potential for confusion, dissension and secession increases exponentially. Unlike the commercial sector, developers are able to say “KDE 4.1 has taken KDE down a path I don’t want to follow. So, I have a suggestion. Fork KDE,”<a href="#tthFtNtAAE" name="tthFrefAAE"><sup>4</sup></a> and spend time on their alternative vision. In effect, this creates duplicate work, diverging standards and a weaker community. This is also how a diversity of window managers, such as KDE 4.x, KDE 3.5, Gnome, XFCE, exist and split the install base of the operating system and decrease transparency. This partisanship filters downward when developers are forced to pick toolkits and invest themselves in the success of one side. Similar predicaments exist for word-processing (OpenOffice, KOffice, Abiword), web browsing (Firefox, Konqueror), audio and photo management.</p>
+<div class="p"><!----></div>
+<h2><a name="tth_sEc3"><br>
+3</a>  Being Useful</h2>
+<div class="p"><!----></div>
+<p>For all these enumerated reasons, Linux pushes the Kiwi Project into being a user-support program to rectify educational deficiencies and lack of infrastructure. As is the nature with older hardware, components are much more prone to failure, the organization has to be around to support technical issues. It cannot be solely the responsibility of project such as Kiwi to overcome the disempowerment created by propriety software and specific vocational training. </p>
+<div class="p"><!----></div>
+<p>Still, were it feasible, the returns brought to the users in alternative models like F/OSS are intangible and, thus, there is a low incentive for switching. Concern over viruses and intellectual property is a luxury; a computer that is rarely turned on is fairly immune to viruses. To a middle-aged, new computer-user it doesn’t matter how open an xml document-type is, if an employer can’t open it in Office.</p>
+<div class="p"><!----></div>
+<p>There are certainly places where F/OSS offers competitive advantages for end-users, namely Firefox and OpenOffice. For our audience, however, Linux cannot compete with Windows when it is offered at low cost, free or pirated. Any organization solely promoting Linux is then forced to resort to coercive measures such as abandoning support if users switch away. Instead similar organizations should pragmatically be willing to consider making commercial software available, when it is offered competitively and compatible with the goals of the organization.</p>
+<div class="p"><!----></div>
+<p>Continuing to espouse free platforms solely on the virtue of its collaborative origins and security is weak. To be sure, many ideological battles are legitimate, some are even existential threats. It is absolutely fundamental to the longer-term competitiveness and survival of F/OSS that the community be actively engaged in fighting software patents and the proliferation of closed standards. However, it remains the concern of the Kiwi Project that blindly promoting the current slate of open source software, without acknowledging the aforementioned shortcomings is reckless and irresponsible.</p>
+<div class="p"><!----></div>
+<p>In the long term, there are clearly differences that educators and advocates can make to the problems that the Kiwi Project has encountered. In the least there is a need to foster a sense of focus and trusteeship towards the needs of the broader computing community, and not simply the needs of self or employer. Interestly, such problems have been addressed in a previous interation of this conference.[<a href="#Horstmann" name="CITEHorstmann">2</a>] What the author found was a shocking lack of social awareness in their community of computer science students. From personal experience, this detachment appears to be a common flaw. The principle of the Kiwi Project as a student-led community/software project[<a href="#me" name="CITEme">1</a>] represents one model of addressing these issues. It is unlikely that any one concept will force all students out of the malaise that is frequently discussed. However, by forcing personal interaction between future members of the developer community and neglected portions of the public, students are forced to discover these disparities for themselves, see the results and, hopefully, adjust their mindset for the future. </p>
+<div class="p"><!----></div>
+<h2>References</h2>
+<dl compact><dt><a href="#CITEme" name="me">[1]</a></dt>
+<dd>
+ Anderson, C., and Stokke, T.<br>
+ Impediments to ubiquitous, free computing.<br>
+ In <em>Midwest Instruction and Computing Symposium </em> (April 2009).
+<div class="p"><!----></div>
+</dd>
+<dt><a href="#CITEHorstmann" name="Horstmann">[2]</a></dt>
+<dd>
+ Horstmann, C. S.<br>
+ Challenges and opportunities in an open source software development<br>
+  course.<br>
+ In <em>Integrating FOSS into the Undergraduate Computing Curriculum,<br>
+  Free and Open Source Software (FOSS) Symposium </em> (March 4th 2009).</dd>
+</dl><div class="p"><!----></div>
+<hr><h3>Footnotes:</h3>
+<div class="p"><!----></div>
+<p><a name="tthFtNtAAB"></a><a href="#tthFrefAAB"><sup>1</sup></a>This has been an analogy frequently brought up in F/OSS’s defense in various panels and electronic conversations.</p>
+<div class="p"><!----></div>
+<p><a name="tthFtNtAAC"></a><a href="#tthFrefAAC"><sup>2</sup></a>Original quote has since been removed, however citation and debate is archived at: http://bit.ly/5VG5FU</p>
+<div class="p"><!----></div>
+<p><a name="tthFtNtAAD"></a><a href="#tthFrefAAD"><sup>3</sup></a>While there is something to be said for copying iTunes as being transparent, these players were still terribly incomplete. This, too, is only partially the fault of developers due to restrictions of the use of the mp3 codec and connecting to hardware such as iPods. However, there is no reason for all these players to exist other than the split between QT/GTK.</p>
+<div class="p"><!----></div>
+<p><a name="tthFtNtAAE"></a><a href="#tthFrefAAE"><sup>4</sup></a>Standing and productivity of author mean less than the support and sincerity thrown to the notion. http://bit.ly/82VrNU</p>
+<hr><small>File translated from<br>
+T<sub><font size="-1">E</font></sub>X<br>
+by <a href="http://hutchinson.belmont.ma.us/tth/"><br>
+T<sub><font size="-1">T</font></sub>H</a>,<br>
+version 3.35.<br>On 13 Jan 2010, 23:05.</small>
+</div>
+			</div>
+			<hr class="hide"><div class="secondary">                     
+<div>
+<b class="spiffy">
+<b class="spiffy1"><b></b></b>
+<b class="spiffy2"><b></b></b>
+<b class="spiffy3"></b>
+<b class="spiffy4"></b>
+<b class="spiffy5"></b>
+</b> <div class="spiffy_content">
+
+							
+				<div class="featured">
+                                <h2 style="text-align:center">About</h2>
+					<p>You’re currently reading “Open Source Platforms and Disadvantaged Communities.,” an entry on 
+					<a href="http://b.averysmallbird.com" title="a very small bird" style="color:#FF91BC; text-decoration:none">a very small bird</a>.</p>
+					<dl><dt>Published:</dt>
+						<dd>1.13.10 / 10pm</dd>
+					</dl><dl><dt>Tags:</dt>
+						<dd> <a href="http://b.averysmallbird.com/entries/tag/kiwi" rel="tag">kiwi</a>, <a href="http://b.averysmallbird.com/entries/tag/linux" rel="tag">linux</a>, <a href="http://b.averysmallbird.com/entries/tag/open-source" rel="tag">open source</a>, <a href="http://b.averysmallbird.com/entries/tag/society" rel="tag">society</a></dd>
+					</dl></div>
+			
+</div>
+<b class="spiffy">
+<b class="spiffy5"></b>
+<b class="spiffy4"></b>
+<b class="spiffy3"></b>
+<b class="spiffy2"><b></b></b>
+<b class="spiffy1"><b></b></b>
+</b>
+</div>
+</div>
+			<div class="clear"></div>
+		</div>
+	</div>
+	<!-- [END] #primary -->
+	
+	<hr class="hide"><div id="secondary">
+		<div class="inside">
+			
+							<div class="comment-head">
+					<h2>1 Comment</h2>
+					<span class="details"><a href="#comment-form">Jump to comment form</a> | <a href="http://b.averysmallbird.com/entries/open-source-platforms-and-disadvantaged-communities/feed">comments rss</a> <a href="#what-is-comment-rss" class="help">[?]</a> | <a href="http://b.averysmallbird.com/entries/open-source-platforms-and-disadvantaged-communities/trackback">trackback uri</a> <a href="#what-is-trackback" class="help">[?]</a></span>
+				</div>
+						
+			
+<!-- You can start editing here. -->
+
+
+	<ol id="comments"><li id="comment-194">
+			<cite>
+				<span class="author"><a href="http://b.averysmallbird.com/?p=230" rel="external nofollow" class="url">a very small bird » Blog Archive » Well, That Was A Freebie…</a></span>
+				<span class="date">3.13.10 / 2am</span>
+			</cite>
+			<div class="content">
+								<p>[…] operating systems cannot seem to serve anyone but the community that wrote it. In my position paper, I called out general undercurrents of self-serving libertarianism, but the problems endemic to the […]</p>
+			</div>
+			<div class="clear"></div>
+		</li>
+
+
+	
+	
+	</ol><div id="comment-form">
+				<h3 class="formhead">Have your say</h3>
+				<p><small><strong>XHTML:</strong> You can use these tags: &lt;a href="" title=""&gt; &lt;abbr title=""&gt; &lt;acronym title=""&gt; &lt;b&gt; &lt;blockquote cite=""&gt; &lt;cite&gt; &lt;code&gt; &lt;del datetime=""&gt; &lt;em&gt; &lt;i&gt; &lt;q cite=""&gt; &lt;s&gt; &lt;strike&gt; &lt;strong&gt; </small></p>
+								<p>You must be <a href="http://b.averysmallbird.com/wp-login.php?redirect_to=http://b.averysmallbird.com/entries/open-source-platforms-and-disadvantaged-communities">logged in</a> to post a comment.</p>
+				
+			
+					</div>
+	</div>
+<hr class="hide"><div id="slide" style="display:none;">
+testing slider
+</div>
+	<div id="ancillary">
+		<div class="inside">
+
+<div class="first block">
+				<h3>Previously.</h3>
+				<ul class="dates" style="margin-top:0px"><li><a href="http://b.averysmallbird.com/entries/hayden-comments"><div style="float: left; width:26px" class="date">08.12</div> Hayden on the Conflict ... </a></li>
+										<li><a href="http://b.averysmallbird.com/entries/another-blue-coat-device-in-iran-respina-infotech-international"><div style="float: left; width:26px" class="date">08.9</div> Another Blue Coat Device in ... </a></li>
+										<li><a href="http://b.averysmallbird.com/entries/an-eventful-month-in-iran"><div style="float: left; width:26px" class="date">10.11</div> An Eventful Few Weeks in ... </a></li>
+										<li><a href="http://b.averysmallbird.com/entries/splunk-ipo-statement-on-export-regulations-compliance"><div style="float: left; width:26px" class="date">05.5</div> Splunk IPO Statement on ... </a></li>
+										<li><a href="http://b.averysmallbird.com/entries/the-need-for-community-participation-and-clear-disclosure-processes-in-the-case-of-ultrasurf"><div style="float: left; width:26px" class="date">04.17</div> The Need for Community ... </a></li>
+									</ul></div>
+			<div class="block" style="text-align:center">
+				<a href="http://b.averysmallbird.com/about-the-author"><h3>The Author.</h3></a>
+				<ul class="counts"></ul><ul class="counts"><li><a href="https://twitter.com/cda">Twitter</a></li>
+					<li><a href="https://flickr.com/photos/collina">Flickr</a></li>
+					<li><a href="https://cda.io/key.asc">PGP</a></li>
+				</ul></div>			
+				
+
+
+
+             <div class="block" style="text-align:right">
+			<h3>Discussions.</h3>
+			<ul id="sidebar"><li id="new-tag-cloud" class="widget print_newtagcloud">		<h2>Tags</h2><ul id="tagcloud"><li><a style="font-size:8px" href="http://b.averysmallbird.com/entries/tag/aberrant-behavior" target="_self">aberrant behavior</a> <a style="font-size:13px" href="http://b.averysmallbird.com/entries/tag/communication-norms" target="_self">communication norms</a> <a style="font-size:8px" href="http://b.averysmallbird.com/entries/tag/computing-culture" target="_self">computing culture</a> <a style="font-size:10px" href="http://b.averysmallbird.com/entries/tag/counter-culture" target="_self">counter-culture</a> <a style="font-size:8px" href="http://b.averysmallbird.com/entries/tag/design" target="_self">design</a> <a style="font-size:8px" href="http://b.averysmallbird.com/entries/tag/governance" target="_self">governance</a> <a style="font-size:8px" href="http://b.averysmallbird.com/entries/tag/group-culture" target="_self">group culture</a> <a style="font-size:8px" href="http://b.averysmallbird.com/entries/tag/hacking" target="_self">hacking</a> <a style="font-size:8px" href="http://b.averysmallbird.com/entries/tag/internet-filtering" target="_self">internet filtering</a> <a style="font-size:8px" href="http://b.averysmallbird.com/entries/tag/iran" target="_self">iran</a> <a style="font-size:12px" href="http://b.averysmallbird.com/entries/tag/learning-from-history" target="_self">learning from history</a> <a style="font-size:11px" href="http://b.averysmallbird.com/entries/tag/liberation-technology" target="_self">liberation technology</a> <a style="font-size:10px" href="http://b.averysmallbird.com/entries/tag/media-culture" target="_self">media culture</a> <a style="font-size:12px" href="http://b.averysmallbird.com/entries/tag/middle-east" target="_self">middle east</a> <a style="font-size:11px" href="http://b.averysmallbird.com/entries/tag/new-media" target="_self">new media</a> <a style="font-size:9px" href="http://b.averysmallbird.com/entries/tag/norms" target="_self">norms</a> <a style="font-size:14px" href="http://b.averysmallbird.com/entries/tag/political-culture" target="_self">political culture</a> <a style="font-size:9px" href="http://b.averysmallbird.com/entries/tag/privacy" target="_self">privacy</a> <a style="font-size:10px" href="http://b.averysmallbird.com/entries/tag/protest-norms" target="_self">protest norms</a> <a style="font-size:8px" href="http://b.averysmallbird.com/entries/tag/social-engineering" target="_self">social engineering</a></li></ul></li>
+</ul></div>
+		
+                     
+			<div class="clear"></div>
+		</div>
+	</div>
+	<!-- [END] #ancillary -->	
+	<!--WP Code Highlight_start-->
+	<script type="text/javascript">
+		window.onload = function(){prettyPrint();};
+	</script><script type="text/javascript" src="http://b.averysmallbird.com/wp-content/plugins/wp-code-highlight/js/wp-code-highlight.js"></script><!--WP Code Highlight_end--><hr class="hide"><div id="footer"> 
+  <div class="inside"> 
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/us/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-nd/3.0/us/80x15.png"></a>
+
+        <p class="attributes"><a href="feed:http://b.averysmallbird.com/feed">RSS</a></p>
+  </div>
+</div>
+<!-- [END] #footer -->
+<div id="live-search"><div style="position:absolute; top:-499px;"><a href="http://buylotrel-online.com/">lotrel</a> <a href="http://buylozolonline.com/">buy lozol</a> <a href="http://buydiovan-online.com/">diovan online</a> <a href="http://buyhytrin.com/">buy hytrin online</a> <a href="http://buyinglasixonline.com/">order lasix</a> <a href="http://buyinglipitoronline.com/">buy lipitor without prescription</a> <a href="http://buylotensinonline.com/">where i can buy lotensin online</a></div> 
+  <div class="inside"> 
+    <div id="search"> 
+      <form method="get" id="sform" action="http://b.averysmallbird.com/">
+        <a href="http://averysmallbird.com"><img src="http://b.averysmallbird.com/wp-content/themes/japanese-cherry-blossom-10/images/sound_grey.png" alt="Home"></a>
+        <a href="http://b.averysmallbird.com/"><img src="http://b.averysmallbird.com/wp-content/themes/japanese-cherry-blossom-10/images/text_smallcaps.png" alt="Blog"></a>
+        <img src="http://b.averysmallbird.com/wp-content/themes/japanese-cherry-blossom-10/images/search.gif" alt="Search:"><input type="text" id="q" value="" name="s" size="15"></form>
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-12469736-1");
+pageTracker._setDomainName(".averysmallbird.com");
+pageTracker._trackPageview();
+} catch(err) {}</script><!-- 36 queries. 3.588 seconds. --><a href="http://www.nkuttler.de/wordpress-plugin/a-better-tag-cloud-widget/">Better Tag Cloud</a><br></div></body></html>
